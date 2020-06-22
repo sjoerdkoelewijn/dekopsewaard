@@ -1,0 +1,15 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.socialnav {
+    color:$white;
+    margin-top:40px;
+    position:relative;
+    z-index:10;
+
+    .link {
+        margin-right:30px;
+       
+    }
+}

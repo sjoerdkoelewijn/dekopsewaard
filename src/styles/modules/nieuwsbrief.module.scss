@@ -1,0 +1,172 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.nieuwsbrief_block {
+    
+    background:$blue;
+    display:flex;
+    align-items: center;
+
+    .text_wrap {
+        width:50%;
+        padding:$horizontal 2vw $horizontal 8vw; 
+        box-sizing: border-box;
+        color:$white;
+
+        .header {
+            font-size:2.4vw;
+            font-weight:900;
+            margin-bottom:30px;
+        }
+
+        p {
+            margin-bottom:20px;
+        }
+    }
+
+
+}
+
+.nieuwsbrief_form {
+    width:45%;
+    margin:5%;
+    padding:1vw 2vw 1vw $horizontal;
+    box-sizing: border-box;
+    z-index:1;
+    color:$white;
+    border-left:1px solid #0E4682;
+
+    @include large-laptop  {
+        margin-left:$horizontal;
+        padding:9vw 0 10vw 0;
+        width:80%;
+    }
+
+    @include large-phone  {
+        padding:0 0 100px 0;
+    }
+
+}
+
+.status_message {
+    background:$white;
+    color:$blue;
+    padding:10px 20px;
+    border-radius: 3px;
+    width:50%;
+    margin:0 0 20px 0;
+    line-height:170%;
+    margin-bottom:20px;
+
+}
+
+.header {
+    font-size:2rem;
+    font-weight:900;
+    margin-bottom:5px;
+
+    @include small-laptop  {
+        font-size: 2.5rem;
+    }
+
+    @include large-phone  {
+        font-size: 2rem;                
+    }
+
+}
+
+.subheader {
+    font-size:1.4rem;
+    font-weight:300;
+    margin:5px 0 30px 0;
+    line-height: 170%;
+}
+
+input {
+    background:#124D8B;
+    border:1px solid #0E4682;
+    padding:20px;
+    display:block;
+    width:70%;
+    margin-bottom:10px;
+    border-radius: 3px;
+    color:$white;
+    font-size:1rem;
+    font-weight: 500;
+    
+    &::placeholder {
+        color:$light-blue;
+        font-size:1rem;
+        font-weight: 500;
+    }
+
+    @include large-phone  {
+        width:70%;
+    }
+
+    @include phone  {
+        width:90%;
+    }
+
+    &:focus {
+        border:1px solid #0E4682;
+    }
+
+}
+
+.signup_btn {
+    background:$orange;
+    margin-top:20px;
+    border-radius:30px;
+    border:0;
+    color:$white;
+    font-size:1.2rem;
+    font-weight: 400;
+    padding:15px 70px;
+
+    &:hover {
+        cursor:pointer;
+        background:$white;
+        color:$blue;
+    }
+}
+
+.privacy_text {
+    width:80%;
+    font-size:$small-p;
+
+    @include large-laptop  {
+        width:70%;
+    }
+
+    p {
+        font-size:1rem;
+        margin:30px 0 0 $horizontal;
+
+        @include large-laptop  {
+            margin-left:6vw;
+        }
+
+        @include small-laptop  {
+            margin-left:0;
+            width:50%;
+        }
+
+        @include large-phone  {
+            width:70%;
+        }
+
+        @include large-phone  {
+            width:90%;
+        }
+    }
+
+    .privacy_link{
+        color:$white;
+
+        &:hover {
+            color:$orange;
+        }
+    }
+}

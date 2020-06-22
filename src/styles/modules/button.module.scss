@@ -1,0 +1,88 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.text_button {
+    color:$blue;
+    font-weight:600;
+    text-decoration: none;
+    cursor: pointer;
+    font-size:1.5rem;
+    margin:30px 0 0 $horizontal;
+    display:inline-block;
+    border-bottom:5px solid $light-blue;
+    transition: border-color .5s ease;
+    
+
+    &:hover {
+        border-bottom:5px solid $blue;
+        transition: border-color .5s ease;
+    }
+
+    &:visited {
+        color:$blue;
+    }
+
+    @include large-phone  {
+        display:inline;
+        line-height:80px;
+    }
+}
+
+.orange_button {
+    background:$orange;
+    border-radius:30px;
+    color:$white;
+    text-decoration: none;
+    padding:13px 70px;
+    transition: background-color .5s ease;
+    border:0;
+    cursor: pointer;
+    font-size:1.2rem;
+    margin:30px 0 0 $horizontal;
+    display:inline-block;
+
+    &:hover {
+        text-decoration: none;
+        background:$blue;
+        transition: background-color 1s ease;
+    }
+
+    &:visited {
+        color:$white;
+    }
+
+    @include large-phone  {
+        display:inline;
+        line-height:80px;
+    }
+}
+
+.blue_button {
+    background:$orange;
+    border-radius:30px;
+    color:$white;
+    text-decoration: none;
+    padding:13px 70px;
+    transition: background-color .5s ease;
+    border:0;
+    cursor: pointer;
+    font-size:1.2rem;
+    margin:30px 0 0 $horizontal;
+    display:inline-block;
+
+    &:hover {
+        text-decoration: none;
+        background:$blue;
+        transition: background-color 1s ease;
+    }
+
+    &:visited {
+        color:$white;
+    }
+
+    @include large-phone  {
+        display:inline;
+        line-height:80px;
+    }
+}

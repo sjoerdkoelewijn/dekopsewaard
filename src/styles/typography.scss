@@ -1,0 +1,94 @@
+@import "colors";
+@import "breakpoints";
+
+
+$large-title:5rem;
+$normal-title:4rem;
+$small-title:3rem;
+
+$large-subtitle:2.8rem;
+$normal-subtitle:2.4rem;
+$small-subtitle:1.7rem;
+
+$large-p:2.4rem;
+$normal-p:1.9rem;
+$medium-p:1.6rem;
+$small-p:1.2rem;
+
+
+::selection {
+    color: $darkblue;
+    background: $orange;
+  }
+
+html {
+    font-family: 'Raleway', sans-serif;
+    color:$blue;
+}
+
+.title {
+    line-height:160%;
+
+}
+
+input::placeholder, textarea::placeholder {
+    font-family: 'Raleway', sans-serif;
+    font-weight:400;
+}
+
+input, textarea {
+    font-family: 'Raleway', sans-serif;
+    font-weight:400; 
+}
+
+button {
+    font-family: 'Raleway', sans-serif;
+}
+
+strong {
+    font-weight:700;
+}
+
+label {
+    font-family: 'Raleway', sans-serif;
+    font-weight:400;
+    //font-size:1.2rem;
+}
+
+h1 {
+    font-weight:900;
+    line-height:150%;
+    font-size:$normal-title;   
+}
+
+h2 {
+    font-weight:900;
+    line-height:150%;
+    font-size:$normal-subtitle;
+}
+
+h3 {
+    font-weight:700;
+    line-height:150%;
+    font-size:2.8rem;
+
+}
+
+h4 {
+    font-weight:700;
+    line-height:150%;
+    font-size:2rem;
+
+}
+
+p{
+    line-height:170%; 
+    font-weight:300;
+    font-size:1.4rem;
+    margin-top:25px;
+
+    @include phone  {
+        font-size:1.4rem;
+    }
+}
+

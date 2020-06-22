@@ -1,0 +1,241 @@
+@import "../colors";
+
+.carousel_kaart {
+
+  .BrainhubCarousel__container {
+    //width: 50.21vw;
+    //overflow: hidden;
+    position:absolute;
+    right:2vw;
+    margin-top:-100vh;
+    z-index:100;
+  }
+  
+  .BrainhubCarousel {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  
+    &.BrainhubCarousel--isRTL {
+      direction: rtl;
+  
+      .BrainhubCarousel__trackContainer {
+        .BrainhubCarousel__track {
+          direction: rtl;
+        }
+      }
+    }
+  
+    .BrainhubCarousel__trackContainer {
+      overflow: hidden;
+      .BrainhubCarousel__track {
+        display: flex;
+        overflow: hidden;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+  
+        &.BrainhubCarousel__track--transition {
+          transition: transform;
+        }
+      }
+    }
+  }
+  
+  /* arrows */
+  .BrainhubCarousel__arrows {
+    cursor: pointer;
+  }
+  
+  .BrainhubCarousel__dots {
+    //position:absolute;
+    display: flex;
+    //z-index:100;
+  
+    margin:-350px 0 0 190px;
+  
+      .BrainhubCarousel__dot  {
+        margin-right:8px;
+        background:$light-blue;
+        border:3px solid $blue;
+        border-radius: 50px;
+        font-weight: 400;
+        width:40px;
+        height:40px;
+        display:block;
+        color:$blue;
+        opacity:.5;
+        font-size:1.4rem;
+        line-height:50%;
+        cursor: pointer;
+      }
+  
+      .BrainhubCarousel__dot--selected {
+        background:$blue;
+        color:$white;
+        border:3px solid $white;
+        //color:$white;
+        font-weight: 900;
+        opacity:1;
+      }
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  $clickableAreaSize: 42px;
+  $clickableAreaColor: $light-blue;
+  $clickableAreaColor__hover: lighten($light-blue, 3%);
+  $disabledButtonColor: #cccccc;
+  
+  $arrowColor: $blue;
+  $arrowColor__hover:$blue;
+  $arrowSize: 8px;
+  $arrowWeight: 3px;
+  
+  .BrainhubCarousel__arrows {
+    padding:10px;
+    border: none;
+    overflow: hidden;
+    outline: 0;
+    font-size: 0;
+    line-height: 0;
+    background-color: $clickableAreaColor;
+    position: absolute;
+    z-index:100;
+    border-radius:50px;
+    left:27.5%;
+    margin-top:720px;  
+  
+    span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-style: solid;
+      border-color: $arrowColor;
+      border-width: $arrowWeight $arrowWeight 0 0;
+      padding: $arrowSize/2;
+      transition: 0.3s;
+      font-size: 0;
+    }
+  
+    &:hover {
+      background-color: $clickableAreaColor__hover;
+      span {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          border-style: solid;
+          border-color: $arrowColor;
+          border-width: $arrowWeight $arrowWeight 0 0;
+          padding: $arrowSize/2;
+          transition: 0.3s;
+          font-size: 0;
+      }
+  
+      &:enabled {
+          background-color: $clickableAreaColor__hover;
+          span {
+              border-color: $arrowColor__hover;
+              margin: 0;
+          }
+      }
+    }
+    
+    &:disabled {
+      background-color: $disabledButtonColor;
+    }
+  }
+  
+  .BrainhubCarousel__arrowLeft {
+    span {
+      transform: translate(-50%, -50%) rotate(-135deg);
+      margin-left: 0.35 * ($arrowSize - $arrowWeight);
+    }
+  }
+  
+  .BrainhubCarousel__arrowRight {
+    margin-left:50px;
+  
+    span {
+      transform: translate(-50%, -50%) rotate(45deg);
+      margin-left: -0.35 * ($arrowSize - $arrowWeight);
+    }
+  }
+  
+  .BrainhubCarousel--isRTL {
+    .BrainhubCarousel__arrowLeft {
+      span {
+        transform: translate(-50%, -50%) rotate(45deg);
+        margin-left: -0.35 * ($arrowSize - $arrowWeight);
+      }
+    }
+  
+    .BrainhubCarousel__custom-arrowLeft {
+      span {
+        transform: rotate(180deg);
+      }
+    }
+  
+    .BrainhubCarousel__arrowRight {
+      span {
+        transform: translate(-50%, -50%) rotate(-135deg);
+        margin-left: 0.35 * ($arrowSize - $arrowWeight);
+      }
+    }
+  
+    .BrainhubCarousel__custom-arrowRight {
+      span {
+        transform: rotate(-180deg);
+      }
+    }
+  
+    .BrainhubCarousel__arrows {
+      &:hover {
+        span {
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  .BrainhubCarousel__arrow--disable {
+      pointer-events: none;
+  }
+  
+  
+  
+  
+  
+  
+  .BrainhubCarouselItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &.BrainhubCarouselItem--clickable {
+      cursor: pointer;
+    }
+    &.BrainhubCarouselItem--active {
+  
+    }
+    .debug-number {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      font-size: 2em;
+      text-shadow: 0px 0px 9px white;
+    }
+  }
+
+}

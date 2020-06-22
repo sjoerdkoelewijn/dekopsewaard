@@ -1,0 +1,254 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.hero_normaal {
+    background:$blue;
+    width:100%;
+    height:100vh;
+    display:block;
+    position:relative;
+
+    @include large-laptop  {
+        height:calc(100vh - 80px);
+    }
+
+    @include small-height  {
+        height:calc(250vh - 80px);
+    }
+
+    .heroimage {
+        width:100%;
+        height:100vh;
+        display:flex;
+        align-items: center;
+        //justify-content: center;
+        z-index:1;
+        background-position: top;
+
+        @include large-laptop  {
+            height:calc(100vh - 80px);
+        }
+
+        @include small-height  {
+            height:calc(250vh - 80px);
+        }
+    }    
+   
+    .textwrap {
+        margin:10vh 0 0 $horizontal;
+        color:$white;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        
+        .header{
+            font-weight:900;
+            font-size:6.5vw;
+            margin-bottom:10px;
+            line-height:130%;
+
+            @include small-laptop  {
+                font-size:6rem;
+            }
+
+            @include phone  {
+                font-size:17vw;
+            }
+
+            @include small-phone  {
+                font-size:16vw;
+                margin-bottom: 15px;
+            }
+    
+        }
+
+        .subheader{
+            font-weight:100;
+            font-size:5.5vw;
+            //margin-bottom:20px;
+
+            @include small-laptop  {
+                font-size:5rem;
+            }
+
+            @include phone  {
+                font-size:15vw;
+            }
+
+            @include small-phone  {
+                font-size:14vw;
+                margin-bottom: 15px;
+            }
+        }
+        
+        .description{
+            font-weight:300;
+            font-size:1.4rem;
+            width:32vw;
+            margin-bottom:50px;
+
+            @include large-laptop  {
+                margin-bottom:40px;
+            }
+
+            @include small-laptop  {
+                width:50vw;
+                margin-bottom:60px;
+            }
+
+            @include phone  {
+                font-size:1.2rem;
+                width:85vw;
+            }
+
+            @include small-phone  {
+                margin-bottom:40px;
+            }
+
+        }
+    }   
+
+    .logo_elburg {
+
+        @include small-phone  {
+            width:90px;
+        }
+
+    }
+    
+    
+    
+}
+
+
+.hero_minimaal {
+    background:$blue;
+    width:100%;
+    height:100vh;
+    display:block;
+    position:relative;
+
+    @include large-laptop  {
+        height:calc(100vh - 80px);
+    }
+
+    @include small-height  {
+        height:calc(250vh - 80px);
+    }
+
+    .heroimage {
+        width:100%;
+        height:100vh;
+        display:flex;
+        align-items: center;
+        //justify-content: center;
+        z-index:1;
+        background-position: top;
+
+        @include large-laptop  {
+            height:calc(100vh - 80px);
+        }
+
+        @include small-height  {
+            height:calc(250vh - 80px);
+        }
+    }    
+   
+    .textwrap {
+        color:$white;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        position:absolute;
+        margin:0 0 0 $horizontal;
+        bottom:10vw;
+            
+        .header{
+            font-weight:900;
+            font-size:6.5vw;
+            line-height:130%;
+
+            @include small-laptop  {
+                font-size:6rem;
+            }
+
+            @include phone  {
+                font-size:17vw;
+            }
+
+            @include small-phone  {
+                font-size:16vw;
+                margin-bottom: 15px;
+            }
+    
+        }
+
+        .subheader{
+            font-weight:100;
+            font-size:3.7vw;
+            width:38vw;
+            line-height:130%;
+
+            @include small-laptop  {
+                font-size:5rem;
+            }
+
+            @include phone  {
+                font-size:15vw;
+            }
+
+            @include small-phone  {
+                font-size:14vw;
+                margin-bottom: 15px;
+            }
+        }        
+
+    }
+
+    .logo_elburg {
+
+        @include small-phone  {
+            width:90px;
+        }
+
+    }
+    
+    .page_menu {
+        background:$white;
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.15);
+        width:84vw;
+        margin-left:$horizontal;
+        position:absolute;
+        bottom:-3vw;
+        padding:2vw 1vw;
+        display:flex;
+        justify-content:space-evenly;
+        font-size:1.4rem;
+               
+
+        a {
+            color:$blue;
+            text-decoration: none;
+            padding:15px 40px;
+            border-radius:30px; 
+            transition: background .5s ease;
+
+            &:hover {
+                background:$light-blue;
+                transition: background 1s ease;
+            }
+        }
+
+    }
+    
+}
+
+
+.ArrowDownIcon {
+    left:50vw;
+    margin-left:-20px;
+    display:block;
+    position:absolute;
+    animation: arrowdown 3s infinite;
+
+    svg {
+        width:25px;
+    }
+}

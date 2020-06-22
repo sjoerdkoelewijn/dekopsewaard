@@ -1,0 +1,1076 @@
+@import "colors";
+@import "reset";
+@import "typography";
+@import "breakpoints";
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes arrowdown {
+    0%      { opacity: 0; transform: translateY(-50px) }
+
+    50%     { opacity: 1; transform: translateY(0) }
+
+    100%    { opacity: 0; transform: translateY(50px) }
+}
+
+@keyframes flickerAnimation { 
+    0%   { opacity:.3; }
+    50%  { opacity:.7; }
+    100% { opacity:.3; }
+  }
+
+  @keyframes flickerAnimationBlueBG { 
+    0%   { opacity:.04; }
+    50%  { opacity:.15; }
+    100% { opacity:.04; }
+  }
+
+
+
+// ---------- Regular Menu ----------------------------------------------------------------------------
+
+
+
+
+// ---------- Mobile Menu ----------------------------------------------------------------------------
+
+.menu__bg {
+    background:$blue;
+    width:100%;
+    height:100vh;
+    position:fixed;
+    z-index:1000;
+    overflow:hidden;
+    transition: all .5s ease;
+    opacity:1;
+        
+    .wave {
+        width:100%;
+        position:absolute;
+        right:50vw;
+        margin-top:-50vh;
+        opacity:.04;
+        animation: flickerAnimationBlueBG 10s infinite;
+        z-index:0;
+       
+        svg {
+            path {
+                fill:$darkblue;
+            }
+        }
+    } 
+
+    .menu_close_btn {
+        font-size:1.2rem;
+        color:$white;
+        //background:$white;
+        border-radius:30px;
+        padding:15px 40px;
+        transition: background-color .5s ease, color .5s ease;
+        position:absolute;
+        right:20px;
+        top:16px;
+        cursor: pointer;
+        z-index:1;
+
+        svg {
+            margin-right:10px;
+    
+            path {
+                fill:$white;
+                transition: fill .5s ease;
+            }
+        }
+
+        &:hover {
+            background:$darkblue;
+            transition: all .5s ease;
+        }
+        
+    }
+
+    .overlaynav {
+        margin:30vh 0 0 0;
+        z-index:1;
+        position:relative;
+
+        .link {
+            display:table;
+            color:$blue;
+            width:50vw;
+            text-align: center;
+            text-decoration:none;
+            font-size:1.2rem;
+            font-weight:400;
+            margin:3vh auto;
+            background:$white;
+            border-radius:30px;
+            padding:15px 40px;
+            transition: all .5s ease;
+
+            &:hover {
+                background:$darkblue;
+                color:$white;
+                transition: all .5s ease;
+            }
+         
+        }
+
+        .link.button {
+            background:$orange;
+            color:$white;
+
+            &:hover {
+                background:$darkblue;
+                transition: all .5s ease;
+            }
+        }
+        
+    }
+
+    .socialnav {
+        position:absolute;
+        bottom:8vw;
+        left:50%;
+        margin-left:-98px;
+        z-index:1;
+
+
+        .link {
+            margin-right:30px;
+
+        }
+
+    }
+}
+
+
+
+
+
+.menu__bg.false {
+    visibility: hidden;
+    opacity:0;
+    transition: all .5s ease;
+    
+    .social_nav {
+        display:none;
+    }
+
+}
+
+
+.menu_btn {
+    color:$blue;
+    background:$light-blue;
+    border-radius:30px;
+    padding:15px 35px;
+    transition: background-color .5s ease, color .5s ease;
+    margin:0 20px 0 0;
+    cursor: pointer;
+    line-height:80px;
+    display:none;
+    
+    @include large-phone  {
+        display:inline;
+    }
+
+    svg {
+        margin-right:10px;
+
+        path {
+            fill:$blue;
+            transition: fill .5s ease;
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+        background:$blue;
+        transition: background-color 1s ease, color .5s ease;
+        color:$white;
+
+        svg {
+            path {
+                fill:$white;
+                transition: fill 1s ease;
+            }
+        }
+    }
+}
+
+
+
+// ---------- Index Hero Section ----------------------------------------------------------------------------
+
+
+
+// ---------- Index Location Section ----------------------------------------------------------------------------
+
+.location {
+    display:flex;
+    overflow:hidden;
+    position:relative;
+
+    @include large-phone  {
+        display: block;
+    }
+    
+    .wave {
+        width:30vw;
+        position:absolute;
+        right:45vw;
+        margin-top:-70vh;
+        opacity:.2;
+        z-index:0;
+
+        svg {
+            width:170%;
+
+            @include small-laptop  {
+                width:auto;
+            }
+
+            path {
+                fill:$light-blue;
+            }
+        }
+    }
+    
+
+    .textwrap {
+        color:$blue;
+        width:50%;
+        padding:8vw;
+        box-sizing: border-box;
+        z-index:1;
+        position:relative;
+
+        @include small-laptop  {
+            width:60%;
+        }
+
+        @include large-phone  {
+            width:100%;
+            padding-bottom:100px;
+        }
+
+        @include phone  {
+            padding-top:100px;
+        }
+    
+        .title {
+            font-size:3vw;
+            font-weight:900;
+            margin-bottom:30px;
+
+            @include small-laptop  {
+                font-size: 2.5rem;
+            }
+
+            @include phone  {
+                font-size: 3.5rem;
+            }
+
+        }
+
+        .text {
+            margin-bottom:40px;
+        }
+
+        .location_link {
+            color:$blue;
+            margin-top:20px;
+            font-size:1.6rem;
+            font-weight:600;
+
+            text-decoration-thickness: 0.2em;
+            text-underline-offset: 0.3em;
+            text-decoration-color: $light-blue;
+            transition: text-decoration-color 0.5s ease;
+
+            &:hover {
+                text-decoration-color: $blue; 
+                transition: text-decoration-color 1s ease;
+            }
+
+        }
+        
+    }
+
+    .imagewrap {
+        width:50%;
+
+        @include small-laptop  {
+            width:40%;
+        }
+
+        @include large-phone  {
+            width:100%;
+            height:50vh;
+        }
+
+    }
+
+}
+
+
+
+
+// ---------- Index Nieuws Section ----------------------------------------------------------------------------
+
+.nieuws {
+    color:$blue;
+    padding-bottom:8vw;
+    overflow:hidden;
+    position:relative;
+    
+    .wave {
+        width:30vw;
+        position:absolute;
+        right:5vw;
+        margin-top:-70vh;
+        opacity:.5;
+        animation: flickerAnimation 10s infinite;
+        z-index:0;
+
+        @include small-laptop  {
+            margin-top:-100vh;
+            right:20vw;
+        }
+
+         svg {
+            path {
+                fill:$light-blue;
+            }
+        }
+    } 
+
+    .text_wrap {
+        margin:8vw 0 0 8vw;
+        z-index:1;
+        position:relative;
+
+        @include large-phone  {
+            margin-top:100px;
+        }
+
+        @include phone  {
+            margin-top:50px;
+        }
+
+        .title {
+            font-size:2.5vw;
+            font-weight:900;
+            margin-bottom:30px;
+
+            @include small-laptop  {
+                font-size:2.5rem;
+            }
+
+        }
+    
+        .intro{
+            width:50%;
+            margin-bottom:30px;
+
+            @include small-laptop  {
+                width:60%;
+            }
+
+            @include large-phone  {
+                width:80%;
+            }
+        }
+
+    }
+
+    .link {
+        color:$blue;
+        padding-bottom:20px;
+        font-size:1.6rem;
+        font-weight:600;
+
+        text-decoration-thickness: 0.2em;
+        text-underline-offset: 0.3em;
+        text-decoration-color: $light-blue;
+        transition: text-decoration-color 0.5s ease;
+
+        &:hover {
+            text-decoration-color: $blue; 
+            transition: text-decoration-color 1s ease;
+        }
+        
+    }
+
+
+}
+
+
+.ArrowDownIcon {
+    left:50vw;
+    display:block;
+    position:absolute;
+    bottom:18vh;
+    animation: arrowdown 3s infinite;
+    z-index:100;
+
+    @include small-laptop  {
+        display:none;
+    }
+    
+}
+
+// ---------- Locatie Pages ----------------------------------------------------------------------------
+
+.location_page {
+
+    .locatie_hero {
+        background:$blue;
+        width:100%;
+        height:calc(100vh - 20px);
+        display:block;
+
+        @include small-laptop  {
+            height:calc(100vh - 54px);
+        }
+
+        @include large-phone  {
+            height:85vh;
+        }
+
+        @include phone  {
+            height:55vh;
+        }
+
+        @include small-height  {
+            height:calc(180vh);
+        }
+        
+        .heroimage {
+            width:100%;
+            height:calc(100vh - 20px);
+            display:flex;
+            align-items: center;
+
+            @include small-laptop  {
+                height:100vh;
+            }
+
+            @include large-phone  {
+                height:85vh;
+            }
+
+            @include phone  {
+                height:55vh;
+            }
+
+            @include small-height  {
+                height:calc(180vh);
+            }
+        
+            .textwrap {
+                margin:37vh 0 0 8vw;
+                color:$white;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                @include phone  {
+                    margin:30vh 0 0 8vw;
+                }
+                
+                .subtitle{
+                    font-weight:100;
+                    font-size:4vw;
+                    margin-bottom:10px;
+    
+                    @include small-laptop  {
+                        font-size:3rem;
+                    }
+    
+                    @include phone  {
+                        font-size:12vw;
+                    }
+                }
+                
+                .title{
+                    font-weight:900;
+                    font-size:6vw;
+                    margin-bottom:20px;
+                    line-height:100%;
+    
+                    @include small-laptop  {
+                        font-size:5rem;
+                    }
+    
+                    @include phone  {
+                        font-size:4rem;
+                    }
+            
+                }
+                
+                .intro{                    
+    
+                    p {
+                        font-weight:400;
+                        font-size:1.45rem;
+                        width:40vw;
+                        margin-bottom:100px;
+        
+                        @include large-laptop  {
+                            margin-bottom:40px;
+                        }
+        
+                        @include small-laptop  {
+                            width:65vw;
+                            margin-bottom:60px;
+                        }
+
+                        @include large-phone  {
+                            width:85vw;
+                        }
+        
+                        @include phone  {
+                            display:none;
+                        }
+                    }
+                
+                }
+            }
+        
+        }
+        
+    }
+
+  
+        
+    .info_section {
+        display:flex;
+
+        @include small-laptop  {
+            display:block;
+        }
+    
+        .textwrap {
+            color:$blue;
+            width:50%;
+            padding:8vw;
+            box-sizing: border-box;
+            display:block;
+
+            @include small-laptop  {
+                width:100%;
+            }
+        
+            .title {
+                font-size:2.8rem;
+                font-weight:900;
+                margin-bottom:30px;
+
+                @include phone  {
+                    font-size:2rem;
+                }
+            }
+    
+            .text {
+                margin-bottom:40px;
+            }
+    
+            .location_link {
+                color:$blue;
+                margin-top:20px;
+                font-size:1.6rem;
+                font-weight:600;
+    
+                text-decoration-thickness: 0.2em;
+                text-underline-offset: 0.3em;
+                text-decoration-color: $light-blue;
+                transition: text-decoration-color 0.5s ease;
+    
+                &:hover {
+                    text-decoration-color: $blue; 
+                    transition: text-decoration-color 1s ease;
+                }
+    
+            }
+            
+        }
+
+        .textwrap.first {
+
+            @include small-laptop  {
+                margin-top:100px;
+            }
+
+            @include large-phone  {
+                margin-top:50px;
+            }
+
+            @include large-phone  {
+                margin-top:20px;
+            }
+        }
+    
+        .imagewrap {
+            width:50%;
+            
+            @include small-laptop  {
+                width:100%;
+                height:70vh;
+            }
+
+        }
+
+        .imagewrap.area {
+            @include small-laptop  {
+                display:none;
+            }
+        }
+
+        .imagewrap.history.mobile {
+            display:none;
+
+            @include small-laptop  {
+                display:block;
+            }
+        }
+
+        .imagewrap.history {
+            @include small-laptop  {
+                display:none;
+            }
+        }        
+    
+    }
+    
+    .video_section {
+        background:$blue;
+        color:$white;
+        width:100%;
+        height:100vh;
+        padding:8vw 0 4vw 0;
+        text-align:center;
+        overflow:hidden;
+        position:relative;
+
+        @include large-laptop  {
+            height:90vh;
+        }
+
+        @include large-phone  {
+            height:80vh;
+        }
+
+        @include phone  {
+            height:50vh;
+        }
+ 
+        .wave {
+            width:30vw;
+            position:absolute;
+            left:-30vw;
+            margin-top:-75vh;
+            opacity:.5;
+            animation: flickerAnimationBlueBG 10s infinite;
+            z-index:0;
+
+            svg {
+
+                path {
+                    fill:$darkblue;
+                }
+            }
+        } 
+
+        .title {
+            font-size:2.8rem;
+            margin-bottom:100px;
+            z-index:1;
+
+            @include phone  {
+                font-size:1.8rem;
+                margin-bottom:30px;
+            }
+        }
+
+        iframe {
+            z-index:1;
+            position:block;
+            margin:0 auto;
+            width:62vw;
+            height:35vw;
+
+            @include small-laptop  {
+                width:80vw;
+                height:45vw;
+            }
+        }
+    }
+
+}
+
+// ---------- Nieuws Pages ----------------------------------------------------------------------------
+
+.nieuwspage_image {
+    position:absolute;
+    width:100%;
+    height:50vh;
+    display: block;    
+}
+
+.nieuwsitemspage_image {
+    position:absolute;
+    width:100%;
+    height:35vh;
+    display: block;    
+}
+
+.nieuwspage {
+    display:flex;
+    overflow:hidden;
+    position:relative;
+    
+    .wave {
+        width:30vw;
+        position:absolute;
+        right:5vw;
+        margin-top:-70vh;
+        opacity:.5;
+        animation: flickerAnimation 10s infinite;
+        z-index:0;
+
+        @include small-laptop  {
+            margin-top:-90vh;
+            right:30vw;
+        }
+
+         svg {
+            path {
+                fill:$light-blue;
+            }
+        }
+    }
+
+
+    .text_wrap {
+        width:45vw;
+        margin:8vw 0 8vw 8vw;
+        color:$blue;
+        z-index:1;
+        position:relative;
+
+        @include small-laptop  {
+            width:80vw;
+        }
+
+        .title {
+            font-size:2.8rem;
+            font-weight:700;
+            margin-bottom:20px;
+
+            @include phone  {
+                font-size:2rem;
+            }
+        }
+
+        
+
+        p {
+            margin-top:50px;
+        }
+
+        iframe {
+            width:100%;
+            height:500px;
+
+            @include phone  {
+                height:200px;
+            }
+        }
+
+
+    }
+
+}
+
+.nieuws.nieuwspage {
+
+    .nieuwsitems_wrap {
+        display:block;
+        margin-top:0;
+
+        @include phone  {
+            margin-top:100px;
+        }
+
+        .nieuwsitem {
+            display:flex;
+            width:60vw;
+            margin:0 0 80px 0;
+
+            @include small-laptop  {
+                width:80vw;
+            }
+
+            @include phone  {
+                display:block;
+            }
+            
+            .image {
+                width:20vw;
+                height:15vw;
+
+                @include small-laptop  {
+                    width:30vw;
+                    height:30vw;
+                }
+
+                @include phone  {
+                    width:80vw;
+                    height:50vw;
+                    margin-bottom:30px;
+                }
+            }
+
+            .link {
+                margin:0;
+            }
+
+            .title {
+                margin:0 0 15px 30px;
+                font-size:1.6rem;
+
+                @include phone  {
+                    margin-left:0;
+                }
+
+            }
+
+            .date_wrap {
+                margin:0 0 15px 30px;
+
+                @include phone  {
+                    margin-left:0;
+                }
+            }
+
+            .cta {
+                margin:0 0 0 30px;
+
+                @include phone  {
+                    margin-left:0;
+                }
+            }
+
+            .excerpt {
+                margin:0 0 20px 30px;
+
+                @include phone  {
+                    margin-left:0;
+                }
+                
+                p {
+                    font-size:1.4rem;
+                }
+            }
+        }
+    }
+
+}
+
+// ---------- Inschrijf Page ----------------------------------------------------------------------------
+
+.inschrijf_heroimage {
+    position:absolute;
+    width:100%;
+    height:50vh;
+    display: block;  
+}
+
+.inschrijf_page {
+    display:flex;
+
+    @include small-laptop  {
+        display:block;
+    }
+
+    .text_wrap {
+        width:45vw;
+        margin:8vw 0 8vw 8vw;
+        color:$blue;
+
+        @include small-laptop  {
+            width:80vw;
+        }
+
+        .title {
+            font-size:2.8rem;
+            font-weight:700;
+            margin-bottom:30px;
+ 
+        }
+    }
+    
+    .newsletter {
+        margin:-200px 8vw 8vw 6vw;
+        z-index:10;
+        display:block;
+        width:35vw;
+        height:70vh;
+
+        @include small-laptop  {
+            margin:30px 8vw 8vw 8vw;
+            width:80vw;
+            background:none;
+        }
+        
+        .form_wrap {
+            padding:6vw;
+            box-sizing: border-box;
+            width:110%;
+            margin:0;
+
+            @include large-laptop  {
+                padding:4.5vw;
+            }
+
+            @include small-laptop  {
+                background:$blue;
+                width:100%;
+            }
+
+            .title {
+                @include large-laptop  {
+                    font-size:1.6rem;
+                }
+            }
+
+            input {
+                width:70%;
+            }
+
+            .privacy_text {
+                width:90%;
+
+                p {
+                    margin-left:0;
+
+                    @include small-laptop  {
+                        width:80%;
+                    }
+                    
+                }
+            }
+            
+
+        }
+    }
+}
+
+// ---------- Text Pages ----------------------------------------------------------------------------
+
+.textpage {
+
+    .text_wrap {
+        width:60vw;
+        margin:8vw 0 8vw 8vw;
+        color:$blue;
+
+        .title {
+            font-size:2.8rem;
+            font-weight:700;
+            margin-bottom:30px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 80px 0 30px 0;
+        }
+    }   
+}
+
+// ---------- Google Maps ----------------------------------------------------------------------------
+
+.tools {
+    position: absolute;
+    background:$white;
+    padding:20px;
+    z-index:10;
+    margin:30px;
+
+    button {
+        font-weight:400;
+        font-size:2rem;
+        line-height:100%;
+        color:$light-grey;
+        border:0;
+        padding:5px 15px;
+        border-radius: 3px;
+        border:1px solid $light-blue;
+        background:$white;
+        margin:10px;
+    }
+}
+
+.marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top:-25px;
+   
+    border-radius: 50%;
+    border: 12px solid $orange;
+    width: 12px;
+    height: 12px;
+    box-shadow: $shadow-grey;
+    
+    &:after {
+        position: absolute;
+        content: '';
+        width: 0px;
+        height: 0px;
+        bottom: -38px;
+        left: -8px;
+        border: 14px solid transparent;
+        border-top: 19px solid $orange;
+      }
+    
+  }
+
+  // TODO other popover styles are in kaart.module.css. css modules and material ui don't play nice together.
+
+  .MuiPopover-paper {
+      background:$blue !important;
+      padding:2vw !important;
+      color:$white !important;
+      width:30vw !important;
+
+      h2 {
+        font-size: 1.6rem !important;
+        font-weight: 700 !important;
+        margin-bottom:10px !important;
+        }
+
+    p {
+        font-size: 1.4rem !important;
+    }
+
+  }
+
+
+  
+
+  .loading {
+      width:100vw;
+      height:100vh;
+      background:$light-blue;
+      color:$blue;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+  }

@@ -1,0 +1,200 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.header {
+    background:$white;
+    width:100%;
+    height:100px;
+    box-shadow:$shadow-grey;
+    z-index:100;
+    //position:fixed;
+
+    @include large-laptop  {
+        height:80px;
+    }
+    
+    .mainnav {
+        font-size:1.2rem;
+        //animation: fadein 3s;
+        float:right;        
+       
+        .link {
+            text-decoration: none;
+            display:inline;
+            line-height:100px;
+            color:$blue;
+            margin:0 30px;
+           
+            &:hover {
+                text-decoration:underline;
+                text-decoration-thickness: 0.2em;
+                text-underline-offset: 0.3em;
+                text-decoration-color: $light-blue;
+            }
+
+            @include large-laptop  {
+                line-height:80px;
+            }
+
+            @include large-phone  {
+                display:none;
+                margin:0 10px;
+            }
+
+        }
+
+        .link_with_submenu {
+            z-index:200;
+            position:relative;
+            margin:0;            
+            height:100px;
+            display:inline-block;
+
+        }
+
+        .submenu {
+            background:$white;
+           
+            width:370px;
+            position:absolute;
+            margin:0 0 0 -15px;            
+            z-index:100;
+            padding:0 20px 20px 20px;
+            //box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.15);
+            
+            visibility: hidden;
+            opacity: 0;
+            transition-property: opacity, visibility;
+            transition-duration: 1s, 0s;
+            transition-delay: 0s, 1s;
+                        
+            .link {
+                display:block;
+                border-top:1px solid $light-blue;
+                text-decoration:none;
+                background-color:$white;
+                padding:25px;
+                margin:0;
+                line-height:100%;
+                transition: background-color .5s ease;
+
+                &:hover {
+                    background-color:$light-blue;
+                    transition: background-color .5s ease;
+                }
+            }
+
+ 
+
+            .main_link {
+                text-decoration: none;
+                display:inline;
+                line-height:100px;
+                color:$blue;
+                border:0;
+               
+                &:hover {
+                    background:none;
+                    text-decoration:underline;
+                    text-decoration-thickness: 0.2em;
+                    text-underline-offset: 0.3em;
+                    text-decoration-color: $light-blue;
+                }
+            }
+
+            .link[aria-current="page"] {
+                text-decoration:none;
+            }
+                
+        }
+
+        .link_with_submenu:hover {
+
+            .submenu {
+                visibility: visible;
+                opacity: 1;
+                transition-delay: 0s, 0s;
+            }
+
+        }
+        
+        .link[aria-current="page"]{
+            text-decoration:underline;
+            text-decoration-thickness: 0.2em;
+            text-underline-offset: 0.3em;
+            text-decoration-color: $light-blue;
+        }
+
+        .button[aria-current="page"] {
+            text-decoration: none;
+        }
+
+        .button {
+            background:$orange;
+            border-radius:30px;
+            color:$white;
+            padding:15px 40px;
+            transition: background-color .5s ease;
+        
+            &:hover {
+                text-decoration: none;
+                color:$white;
+                background:$blue;
+                transition: background-color 1s ease;
+            }
+        
+            &:visited {
+                color:$white;
+            }
+        
+            @include large-phone  {
+                display:inline;
+                line-height:80px;
+            }
+        
+            @include phone  {
+                display:none;
+            }
+        }
+        
+        .ChevronIcon {
+        
+            svg {
+                width:8px;
+                height:10px;
+                margin-left:10px;
+                transform: rotate(90deg)
+            }
+        }
+
+    }
+}
+
+.logo {
+    position:absolute;
+    margin-left:$horizontal;
+    margin-top:-60px;
+    z-index:100;
+    box-shadow:$shadow-grey;
+    width:136px;
+    height:136px;
+    //animation: fadein 1s;
+
+    svg {
+        width:136px;
+        height:136px;
+
+        @include large-laptop  {
+            width:120px;
+            height:120px;
+        }
+
+        @include small-phone  {
+            width:110px;
+            height:110px;
+        }
+    }
+    
+}
+

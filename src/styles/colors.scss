@@ -1,0 +1,21 @@
+  $white:#ffffff;
+  $blue:#1F5C9D;
+  $darkblue:#072D55;
+  $orange:#F15410;
+  $light-blue:#D9E5F1;
+  $light-grey:#82878D;
+
+  a {
+    color:$orange;
+  }
+
+  a:hover {
+    color:$darkblue;
+  }
+
+  a:visited {
+    color:$blue;
+  }
+  
+  $shadow-grey:4px 4px 10px rgba(0, 0, 0, 0.15);
+

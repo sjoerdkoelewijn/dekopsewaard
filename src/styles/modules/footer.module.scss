@@ -1,0 +1,122 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.footer {
+    width:100%;
+    background:$blue;
+    display:flex;
+    align-items: center;
+    overflow:hidden;
+    position:relative;
+    //margin-top:4vw;
+    
+    .wave {
+        width:30vw;
+        position:absolute;
+        right:25%;
+        margin-top:60vh;
+        opacity:.04;
+        //animation: flickerAnimationBlueBG 10s infinite;
+        z-index:1;
+       
+        svg {
+            path {
+                fill:$darkblue;
+            }
+        }
+    } 
+    
+    .footer_wrap {
+        margin:150px 0;
+        display:flex;
+        align-items: top;
+
+        @include large-phone  {
+            display: block;
+            margin:150px 0 100px 0;
+        }
+
+        .logos {
+            margin-left:$horizontal;
+    
+            .footerlogo {
+                display:block;
+
+                @include large-phone  {
+                    display: inline;
+                }
+            }
+    
+            .logoElburg {
+                display:block;
+                margin:40px 0 0 20px;
+
+                @include large-phone  {
+                    display: inline;
+                    margin:20px 0 0 40px;
+                }
+
+                @include large-phone  {
+                    margin:20px 0 0 20px;
+                }
+            }
+    
+        }
+    
+        .textwrap {
+            margin-left:60px;
+            width:20vw;
+
+            @include large-laptop  {
+                width:35vw;
+            }
+
+            @include large-phone  {
+                width:84vw;
+                margin:$horizontal;
+            }
+    
+            .text {
+                font-size:1.4rem;
+                font-weight:300;
+                color:$white;
+
+                p {
+                    margin:0 0 20px 0;
+                }
+            }
+                
+        }
+        
+    }
+
+    
+}
+
+.belowFooter {
+    width:100%;
+    background:$darkblue;
+    color:$white;
+    line-height:90px;
+    box-sizing: border-box;
+    line-height:170%;
+    padding:30px $horizontal;
+    
+    p {
+        font-size: $small-p;
+        margin:0;
+    }
+    
+    a {
+        color:$white;
+        
+        &:visited {
+            color:$orange;
+        }
+    }
+
+    a:visited, a:hover {
+        color:$light-blue;
+    }
+}
