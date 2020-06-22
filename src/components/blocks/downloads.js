@@ -24,6 +24,24 @@ const DownloadsBlock = ({acf}) => {
 
       <h2>downloads</h2>
 
+      <div className={styles.file_wrap}>
+
+        <div className={styles.documenten}>
+
+          <strong>Documenten</strong>
+
+          {acf.documenten.map(download => {
+            
+            return (
+              <a rel="noreferrer" target="_blank" href={download.doc_download.sourceUrl}>{download.doc_titel}</a>
+            )
+
+          })}
+      
+        </div>
+
+      </div>
+
     </article>  
   )
                 
