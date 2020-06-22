@@ -28,7 +28,7 @@ const DownloadsBlock = ({acf}) => {
 
         <div className={styles.documenten}>
 
-          <strong>Documenten</strong>
+          <h3>Documenten</h3>
 
           {acf.documenten.map(download => {
             
