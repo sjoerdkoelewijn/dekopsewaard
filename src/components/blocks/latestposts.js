@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from 'gatsby';
-import NieuwsItems from "../NieuwsItems";
+import NieuwsItems from "../../components/NieuwsItems";
 
 export const fragment = graphql`
   fragment AcfLatestpostBlock on WPGraphQL_AcfLatestpostBlock {
