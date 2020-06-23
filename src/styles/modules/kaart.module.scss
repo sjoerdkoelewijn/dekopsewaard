@@ -4,22 +4,54 @@
 
 
 .ontwerp_map {
-    width:100%;
+    width:100vw;
     height:1080px;
     overflow: hidden;
     position:relative;
 
+    @include small-laptop  {
+        display:none;
+    }
+  
     svg {
         position:absolute;
         z-index:100;
+
+        @include small-desktop  {
+            margin-left:-20%;
+        }
+
+        @include large-laptop  {
+            margin-left:-35%;
+        }
+
+        @include medium-laptop  {
+            margin-left:-45%;
+        }
+      
+        
     }
 
 }
 
 .kaartImage {
     width:100%;
-}
 
+    @include small-desktop  {
+        margin-left:-20%;
+    }
+
+    @include large-laptop  {
+        margin-left:-35%;
+    }
+    
+    @include medium-laptop  {
+        margin-left:-45%;
+    }
+
+   
+    
+}
 
 // TODO popover styles are in global.css. css modules and material ui don't play nice together.
 

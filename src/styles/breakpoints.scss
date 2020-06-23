@@ -15,11 +15,19 @@
 }
 
 @mixin small-laptop {
-    @media (max-width: 1024px) { @content; }
+    @media (max-width: 1023px) { @content; }
+}
+
+@mixin medium-laptop {
+    @media (max-width: 1350px) { @content; }
 }
 
 @mixin large-laptop {
     @media (max-width: 1440px) { @content; }
+}
+
+@mixin small-desktop {
+    @media (max-width: 1600px) { @content; }
 }
 
 @mixin desktop {
@@ -32,3 +40,8 @@
 
 // horizontal 
 $horizontal:8vw;
+$vertical:6vw;
+
+@include large-laptop  {
+    $horizontal:6vw;
+}

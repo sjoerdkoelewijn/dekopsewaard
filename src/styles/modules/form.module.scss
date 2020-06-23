@@ -7,6 +7,14 @@
     margin-left:$horizontal;
     margin-bottom:8vw;
     max-width:50vw;
+    
+    @include large-laptop  {
+        max-width:60vw;
+    }
+
+    @include small-laptop  {
+        max-width:80vw;
+    }
 
     label {
         margin:30px 0 0 4px;

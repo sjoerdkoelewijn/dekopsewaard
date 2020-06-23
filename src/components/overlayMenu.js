@@ -1,18 +1,30 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Wave from "./wavePattern";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const OverlayMenu = ({ menuOpen, callback }) => {
     const data = useStaticQuery(graphql`
     query getMobileMenu{
         wordPress {
             menuItems(where: {location: MAIN_NAVIGATION}) {
-                nodes {
+                edges {
+                node {
                     url
                     label
                     cssClasses
+                    childItems {
+                    edges {
+                        node {
+                        url
+                        label
+                        cssClasses
+                        }
+                    }
+                    }            
                 }
-            }  
+                }
+            }
         }
     }
 
@@ -23,19 +35,67 @@ const OverlayMenu = ({ menuOpen, callback }) => {
 
         <nav className="overlaynav">
 
-            {data.wordPress.menuItems.nodes.map(node => {
+        {data.wordPress.menuItems.edges.map(item => {
 
-            const wpurl = `https://kopsewaard.sjoerdkoelewijn.com`
-            const onlyPath = node.url.replace(wpurl, ``)
+        const wpurl = `https://dekopsewaard.nl` 
+        const onlyPath = item.node.url.replace(wpurl, ``)
 
-                return (
+        return (
+            
+            <>
+            
+            {item.node.childItems.edges.length !== 0 ?
+
+                <>
+                
+                <div className={`link link_with_submenu ${item.node.cssClasses}`}>
                     
-                <Link key={node.id} aria-label={node.label} to={`/${onlyPath}/`} className={node.cssClasses}>
-                    {node.label}
-                </Link>
+                    <Link key={item.node.id} aria-label={item.node.label} to={`/${onlyPath}/`} className={`link ${item.node.cssClasses}`}>
+                        {item.node.label}
+                    </Link>
+                                        
+                    <div className="submenu">
+
+                        {item.node.childItems.edges.map(subitem => {
+                        return (
+
+                            <AnchorLink key={subitem.node.id} aria-label={subitem.node.label} to={subitem.node.url} className={`link ${item.node.cssClasses}`}>
+                            {subitem.node.label}
+                            </AnchorLink>
+
+                        )
+                        
+                        })}
+
+                    </div>
+
+                </div>    
+
+                </>
+
+                :
+
+                <>
+
+                    {item.node.cssClasses.includes('button') ?
+                        <Link key={item.node.id} aria-label={item.node.label} to={`/${onlyPath}/`} className="button link">
+                        {item.node.label}
+                        </Link>
+                    :
+                        <Link key={item.node.id} aria-label={item.node.label} to={`/${onlyPath}/`} className={`link ${item.node.cssClasses}`}>
+                        {item.node.label}
+                        </Link>
+                    }
                     
-                )
-            })}
+                </>   
+
+            }                
+            
+            </>
+
+        )
+        })}
+
 
         </nav>
 

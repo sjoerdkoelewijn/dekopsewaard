@@ -61,6 +61,15 @@ const BlocksliderBlock = ({acf}) => {
     <Carousel         
     clickToChange
     slidesPerPage={3}
+    breakpoints={{
+      1600: {
+        slidesPerPage: 2
+      },
+      800: {
+        slidesPerPage: 1,
+        infinite: true
+      }
+    }}
     className={styles.block_slide_carousel}>
       
       {acf.block_slider.map(blockslide => (
@@ -175,7 +184,16 @@ const BlocksliderBlock = ({acf}) => {
 
             </div>
 
+            <BackgroundImage 
+              Tag="div"
+              className={styles.mobile_image}
+              fluid={acf.image.imageFile.childImageSharp.fluid}
+              backgroundColor={`#D9E5F1`}
+            />
+
           </article>
+
+          
 
           <Slideitems />
 

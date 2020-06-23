@@ -7,6 +7,10 @@
     //min-height:100vh;
     display:flex;
     //align-items: center;
+
+    @include small-laptop  {
+        display: inline;
+    }
     
     .slider_image {
         width: 50.21vw;
@@ -30,16 +34,39 @@
     
             p {
                 font-size:1.4rem;                
-            }        
+            } 
+            
+            @include small-laptop  {
+                left:50px;
+                bottom:50px;
+                padding:50px 75px 100px 50px;
+            }
+            
+        }   
+        
+        @include large-laptop  {
+            width:45vw;
+        }
+
+        @include small-laptop  {
+            width:100vw;
+            height:80vh;
         }
     
     }
+
+
 
     .carousel {
        
         .slider_image {
            width:100vw;
            height:145vh;
+
+           @include small-laptop  {
+            height:100vh;
+            }
+
         }
     
     }
@@ -50,8 +77,12 @@
         box-sizing: border-box;
         display:block;
 
+        @include large-laptop  {
+            width:55vw;
+        }
+
         @include small-laptop  {
-            width:100%;
+            width:100vw;
         }
 
         .nummer {

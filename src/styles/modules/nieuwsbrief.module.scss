@@ -8,6 +8,10 @@
     display:flex;
     align-items: center;
 
+    @include small-laptop  {
+        display:block;
+    }
+
     .text_wrap {
         width:50%;
         padding:$horizontal 2vw $horizontal 8vw; 
@@ -15,13 +19,17 @@
         color:$white;
 
         .header {
-            font-size:2.4vw;
+            font-size:2.5rem;
             font-weight:900;
             margin-bottom:30px;
         }
 
         p {
             margin-bottom:20px;
+        }
+
+        @include small-laptop  {
+            width:90%;
         }
     }
 
@@ -37,14 +45,11 @@
     color:$white;
     border-left:1px solid #0E4682;
 
-    @include large-laptop  {
-        margin-left:$horizontal;
-        padding:9vw 0 10vw 0;
-        width:80%;
-    }
-
-    @include large-phone  {
-        padding:0 0 100px 0;
+    @include small-laptop  {
+        width:100%;
+        margin:0 0 100px 0;
+        border:0;
+        display:inline-block;
     }
 
 }

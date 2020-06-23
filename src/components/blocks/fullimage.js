@@ -26,7 +26,7 @@ const FullimageBlock = ({acf}) => {
 
   return (
 
-    <>
+    <div className={styles.fullwidthimage_wrap}>
     
       <Img
         className={styles.fullwidthimage}
@@ -38,7 +38,7 @@ const FullimageBlock = ({acf}) => {
         }}
       />
 
-    </>
+    </div>
 
   );
                 

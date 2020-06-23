@@ -16,16 +16,20 @@ const EmbedYoutubeBlock = ({attributes}) => {
 
  
     return (
-      
+  <>    
         <iframe 
         width="800" 
-        height="600"
+        height="450"
         title={attributes.caption}        
-        src={attributes.url} 
+        src="https://www.youtube.com/embed/LikwkUoDiVc" 
         frameBorder="0" 
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen=""
-      />                 
+        allowfullscreen
+      >
+        </iframe>            
+      
+
+</>
               
 )};
 

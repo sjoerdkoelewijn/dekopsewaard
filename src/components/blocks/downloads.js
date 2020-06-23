@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from 'gatsby';
-import styles from '../../styles/modules/pages.module.scss';
+import styles from '../../styles/modules/downloads.module.scss';
+import Wave from "../wavePattern";
+import PDFIcon from '../pdfIcon';
 
 
 export const fragment = graphql`
@@ -8,10 +10,15 @@ export const fragment = graphql`
     acf {
       documenten {
         doc_download {
-          sourceUrl
-          altText
+          mediaItemUrl
         }
         doc_titel
+      }
+      planning {
+        plan_download {
+          mediaItemUrl
+        }
+        plan_titel
       }
     }     
   }
@@ -22,7 +29,7 @@ const DownloadsBlock = ({acf}) => {
   return (
     <article className={styles.downloads}>
 
-      <h2>downloads</h2>
+      <h2>Downloads</h2>
 
       <div className={styles.file_wrap}>
 
@@ -33,13 +40,31 @@ const DownloadsBlock = ({acf}) => {
           {acf.documenten.map(download => {
             
             return (
-              <a rel="noreferrer" target="_blank" href={download.doc_download.sourceUrl}>{download.doc_titel}</a>
+              <a rel="noreferrer" title={download.doc_download.doc_titel} target="_blank" href={download.doc_download.mediaItemUrl}><PDFIcon /> {download.doc_titel}</a>
             )
 
           })}
       
         </div>
 
+        <div className={styles.planning}>
+
+          <h3>Planning</h3>
+
+          {acf.planning.map(download => {
+            
+            return (
+              <a rel="noreferrer" title={download.plan_download.plan_titel} target="_blank" href={download.plan_download.mediaItemUrl}><PDFIcon /> {download.plan_titel}</a>
+            )
+
+          })}
+      
+        </div>
+
+      </div>
+
+      <div className={styles.wave}>
+          <Wave />
       </div>
 
     </article>  

@@ -1,9 +1,15 @@
 @import "../colors";
+@import "../breakpoints";
 
 
 .BrainhubCarousel__container {
   width: 50.21vw;
   overflow: hidden;
+
+  @include small-laptop  {
+    width:100vw;
+  }
+
 }
 
 .BrainhubCarousel {
@@ -47,6 +53,10 @@
   display: flex;
 
   margin:-130px 0 0 120px;
+
+  @include small-laptop  {
+    margin:-120px 0 0 100px;
+  }
 
     .BrainhubCarousel__dot  {
       margin-right:5px;

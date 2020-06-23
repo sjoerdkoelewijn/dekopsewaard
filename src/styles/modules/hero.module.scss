@@ -88,10 +88,11 @@
 
             @include large-laptop  {
                 margin-bottom:40px;
+                width:50vw;
             }
 
             @include small-laptop  {
-                width:50vw;
+                width:70vw;
                 margin-bottom:60px;
             }
 
@@ -187,17 +188,10 @@
             line-height:130%;
 
             @include small-laptop  {
-                font-size:5rem;
-            }
+                font-size:5vw;
+                width:60vw;            }
 
-            @include phone  {
-                font-size:15vw;
-            }
-
-            @include small-phone  {
-                font-size:14vw;
-                margin-bottom: 15px;
-            }
+        
         }        
 
     }
@@ -221,8 +215,11 @@
         display:flex;
         justify-content:space-evenly;
         font-size:1.4rem;
-               
 
+        @include small-laptop  {
+            display:none;
+        }
+        
         a {
             color:$blue;
             text-decoration: none;

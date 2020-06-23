@@ -1,0 +1,79 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.downloads {
+    width:100%;
+    min-height:50vh;
+    padding:$vertical 0 $vertical $horizontal;
+    background:$light-blue;
+    overflow:hidden;
+    position:relative;
+
+    a {
+        color:$blue;
+        text-decoration: none;
+        font-size:1.4rem;
+        font-weight: 300;
+        transition: color .5s ease;
+        display:block;
+        margin-bottom:20px;
+
+        svg {
+            margin-right:20px;
+            margin-top:4px;
+            
+            path {
+                fill:$blue;
+                transition: fill 1s ease;
+            }
+        }
+
+        &:hover {
+            color:$orange;
+            transition: color .5s ease;
+
+            svg {
+                path {
+                    fill:$orange;
+                    transition: fill .5s ease;
+                }
+            }
+        }
+    }
+}
+
+.file_wrap {
+    display:flex;
+    margin-top:2vw;
+    z-index:10;
+    position: relative;
+}
+
+.planning {
+    margin-left:$horizontal;
+}
+
+h2 {
+    z-index:10;
+    position: relative;
+}
+
+h3 {
+    font-size:1.3rem;
+    margin-bottom:30px;    
+}
+
+.wave {
+    position:absolute;
+    left:-25%;
+    top:3vw;
+    z-index:0;
+
+    svg {
+        path {
+            fill:$blue;
+            opacity:.04;
+        }
+    }
+}

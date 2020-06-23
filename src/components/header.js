@@ -115,10 +115,9 @@ const Header = () => {
             )
         })}
 
-
-        <Burger handleOverlayMenu={handleOverlayMenu} />
-
       </nav>
+
+      <Burger handleOverlayMenu={handleOverlayMenu} />
       
     </header>
 
