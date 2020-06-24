@@ -115,8 +115,14 @@
 // ---------- Core Blocks --------------------------
 
 .CoreHeadingBlock {
-    margin:$horizontal 0 0 $horizontal;
+    margin:$horizontal $horizontal 0 $horizontal;
     display:block;
+
+    h2 {
+        @include phone  {
+            font-size:2rem;
+        }
+    }
 }
 
 .CoreParagraphBlock {
@@ -142,16 +148,16 @@
 }
 
 .CoreImageBlock {
-    margin:30px 0 30px $horizontal;
+    margin:30px $horizontal 30px $horizontal;
     display:inline-block;
 }
 
 .CoreQuoteBlock {
-    margin:30px 0 30px $horizontal;
+    margin:30px $horizontal 30px $horizontal;
     display:inline-block;
 }
 
 .CoreEmbedYoutubeBlock {
-    margin:30px 0 30px $horizontal;
+    margin:30px $horizontal 30px $horizontal;
     display:inline-block;
 }

@@ -31,130 +31,6 @@
 
 
 
-// ---------- Regular Menu ----------------------------------------------------------------------------
-
-
-// ---------- Mobile Menu ----------------------------------------------------------------------------
-
-.menu__bg {
-    background:$blue;
-    width:100%;
-    height:100vh;
-    position:fixed;
-    z-index:1000;
-    overflow:hidden;
-    transition: all .5s ease;
-    opacity:1;
-        
-    .wave {
-        width:100%;
-        position:absolute;
-        right:50vw;
-        margin-top:-50vh;
-        opacity:.04;
-        z-index:0;
-       
-        svg {
-            path {
-                fill:$darkblue;
-            }
-        }
-    } 
-
-    .menu_close_btn {
-        font-size:1.3rem;
-        color:$white;
-        //background:$white;
-        border-radius:30px;
-        padding:15px 40px;
-        transition: background-color .5s ease, color .5s ease;
-        position:absolute;
-        right:24px;
-        top:12px;
-        cursor: pointer;
-        z-index:1;
-
-        svg {
-            margin-right:10px;
-    
-            path {
-                fill:$white;
-                transition: fill .5s ease;
-            }
-        }
-
-        &:hover {
-            background:$darkblue;
-            transition: all .5s ease;
-        }
-        
-    }
-
-    .overlaynav {
-        z-index:100;
-        position:relative;
-        margin-top:10vh;
-
-        .link {
-            color:$white;
-            text-decoration: none;
-            font-size: 1.4rem;
-            margin:30px $horizontal;
-            display:block;
-
-            &:hover {
-                color:$orange;
-            }
-                                 
-        }  
-
-        .link_with_submenu {
-            margin-left:0;
-        }
-
-        .submenu {
-            margin-left:$horizontal;
-        }
- 
-        
-    }
-
-    .socialnav {
-        position:absolute;
-        bottom:8vw;
-        left:50%;
-        margin-left:-98px;
-        z-index:1;
-
-
-        .link {
-            margin-right:30px;
-
-        }
-
-    }
-}
-
-
-
-
-
-.menu__bg.false {
-    visibility: hidden;
-    opacity:0;
-    transition: all .5s ease;
-    
-    .social_nav {
-        display:none;
-    }
-
-}
-
-
-
-
-
-
 
 // ---------- Index Location Section ----------------------------------------------------------------------------
 
@@ -999,6 +875,19 @@
       @include large-laptop  {
         padding:4vw !important;
         width:40vw !important;
+      }
+
+      @include large-phone  {
+        width:60vw !important;
+      }
+
+      @include small-phone  {
+        width:80vw !important;
+        padding:8vw !important;
+      }
+
+      @include small-phone  {
+        width:90vw !important;
       }
 
       h2 {

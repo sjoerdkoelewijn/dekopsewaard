@@ -54,8 +54,12 @@
 
   margin:-130px 0 0 120px;
 
-  @include small-laptop  {
+  @include small-desktop  {
     margin:-120px 0 0 100px;
+  }
+
+  @include small-laptop  {
+    margin:-70px 0 0 55px;
   }
 
     .BrainhubCarousel__dot  {

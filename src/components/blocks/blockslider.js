@@ -67,7 +67,7 @@ const BlocksliderBlock = ({acf}) => {
       },
       800: {
         slidesPerPage: 1,
-        infinite: true
+        arrows: true
       }
     }}
     className={styles.block_slide_carousel}>

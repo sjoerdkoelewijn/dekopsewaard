@@ -52,11 +52,12 @@
 
             @include phone  {
                 font-size:17vw;
+                margin:0;
             }
 
             @include small-phone  {
                 font-size:16vw;
-                margin-bottom: 15px;
+                
             }
     
         }
@@ -72,11 +73,12 @@
 
             @include phone  {
                 font-size:15vw;
+                margin:0;
             }
 
             @include small-phone  {
                 font-size:14vw;
-                margin-bottom: 15px;
+               
             }
         }
         
@@ -99,6 +101,7 @@
             @include phone  {
                 font-size:1.2rem;
                 width:85vw;
+                margin:10px 0 0 0;
             }
 
             @include small-phone  {
@@ -110,8 +113,12 @@
 
     .logo_elburg {
 
-        @include small-phone  {
+        @include phone  {
             width:90px;
+        }
+
+        @include small-phone  {
+            width:80px;
         }
 
     }
@@ -171,12 +178,11 @@
             }
 
             @include phone  {
-                font-size:17vw;
+                font-size:18vw;
             }
 
             @include small-phone  {
-                font-size:16vw;
-                margin-bottom: 15px;
+                font-size:18vw;
             }
     
         }
@@ -189,7 +195,13 @@
 
             @include small-laptop  {
                 font-size:5vw;
-                width:60vw;            }
+                width:60vw;            
+            }
+
+            @include phone  {
+                font-size:9vw;
+                width:88vw;
+            }
 
         
         }        
