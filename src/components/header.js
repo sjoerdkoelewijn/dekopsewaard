@@ -66,7 +66,7 @@ const Header = () => {
                   
                     <div className={[item.node.cssClasses, styles.link, styles.link_with_submenu].join(' ')}>
                         
-                        <Link key={item.node.id} aria-label={item.node.label} to={`/${onlyPath}/`} className={[item.node.cssClasses, styles.link].join(' ')}>
+                        <Link key={item.node.id} aria-label={item.node.label} to={onlyPath} className={[item.node.cssClasses, styles.link].join(' ')}>
                             {item.node.label}
                             <span className={styles.ChevronIcon}>
                               <ChevronIcon />
@@ -97,11 +97,11 @@ const Header = () => {
                     <>
 
                         {item.node.cssClasses.includes('button') ?
-                          <Link key={item.node.id} aria-label={item.node.label} to={`/${onlyPath}/`} className={[styles.button, styles.link].join(' ')}>
+                          <Link key={item.node.id} aria-label={item.node.label} to={onlyPath} className={[styles.button, styles.link].join(' ')}>
                             {item.node.label}
                           </Link>
                         :
-                          <Link key={item.node.id} aria-label={item.node.label} to={`/${onlyPath}/`} className={[item.node.cssClasses, styles.link].join(' ')}>
+                          <Link key={item.node.id} aria-label={item.node.label} to={onlyPath} className={[item.node.cssClasses, styles.link].join(' ')}>
                             {item.node.label}
                           </Link>
                         }
