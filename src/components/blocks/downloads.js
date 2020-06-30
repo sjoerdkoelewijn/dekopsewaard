@@ -29,35 +29,35 @@ const DownloadsBlock = ({acf}) => {
   return (
     <article className={styles.downloads}>
 
-      <h2>Downloads</h2>
+      <h2 className={styles.header}>Downloads</h2>
 
       <div className={styles.file_wrap}>
 
         <div className={styles.documenten}>
 
-          <h3>Documenten</h3>
+          <h3 className={styles.subheader}>Documenten</h3>
 
-          {acf.documenten.map(download => {
-            
-            return (
-              <a rel="noreferrer" title={download.doc_download.doc_titel} target="_blank" href={download.doc_download.mediaItemUrl}><PDFIcon /> {download.doc_titel}</a>
-            )
+            {acf.documenten.map(download => {
+              
+              return (
+                <a className={styles.download_link} rel="noreferrer" title={download.doc_download.doc_titel} target="_blank" href={download.doc_download.mediaItemUrl}><PDFIcon /> {download.doc_titel}</a>
+              )
 
-          })}
-      
+            })}
+
         </div>
 
         <div className={styles.planning}>
 
-          <h3>Planning</h3>
+          <h3 className={styles.subheader}>Planning</h3>
 
-          {acf.planning.map(download => {
-            
-            return (
-              <a rel="noreferrer" title={download.plan_download.plan_titel} target="_blank" href={download.plan_download.mediaItemUrl}><PDFIcon /> {download.plan_titel}</a>
-            )
+            {acf.planning.map(download => {
+              
+              return (
+                <a className={styles.download_link} rel="noreferrer" title={download.plan_download.plan_titel} target="_blank" href={download.plan_download.mediaItemUrl}><PDFIcon /> {download.plan_titel}</a>
+              )
 
-          })}
+            })}
       
         </div>
 

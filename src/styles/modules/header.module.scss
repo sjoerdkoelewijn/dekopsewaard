@@ -186,7 +186,7 @@
 
 .logo {
     position:absolute;
-    margin-left:$horizontal;
+    margin-left:var(--horizontal);
     margin-top:-60px;
     z-index:100;
     box-shadow:$shadow-grey;
@@ -227,7 +227,7 @@
     line-height:80px;
     display:none;
     position:absolute;
-    right:60px;
+    right:var(--horizontal);
     top:3px;
     font-size:1.3rem;
     

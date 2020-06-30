@@ -3,7 +3,7 @@
 @import "../typography";
 
 .form_block {
-    margin:$vertical $horizontal $vertical $horizontal;
+    margin:var(--vertical-s) var(--horizontal) var(--vertical) var(--horizontal);
     max-width:50vw;
     
     @include large-laptop  {

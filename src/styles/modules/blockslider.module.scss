@@ -56,7 +56,7 @@
 
     .text_wrap {
         width:50vw;
-        padding:4vw $horizontal 8vw $horizontal;
+        padding:4vw var(--horizontal) 8vw var(--horizontal);
         box-sizing: border-box;
         display:block;
 

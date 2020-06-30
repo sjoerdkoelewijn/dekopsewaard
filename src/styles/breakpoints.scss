@@ -3,7 +3,7 @@
 }
 
 @mixin small-height {
-    @media (max-height: 600px) { @content; }
+    @media (max-height: 560px) { @content; }
 }
 
 @mixin small-phone {
@@ -19,7 +19,7 @@
 }
 
 @mixin small-laptop {
-    @media (max-width: 1024px) { @content; }
+    @media (max-width: 1023px) { @content; }
 }
 
 @mixin medium-laptop {
@@ -43,13 +43,33 @@
 }
 
 // padding & margin
-$horizontal:8vw;
-$vertical:6vw;
+
+:root {
+    --horizontal:8vw;
+    --horizontal-s:4vw;
+    
+    --vertical:6vw;
+    --vertical-s:5vh;
+}
 
 @include large-laptop  {
-    $horizontal:6vw;    
+    :root {
+        --horizontal:6vw;
+        --vertical:6vw;
+    }
 }
 
-@include large-phone  {
-    $vertical:5vh;
+@include large-phone {
+    :root {
+        --horizontal:8vw;
+        --vertical:5vh;
+    }
 }
+
+@include small-phone {
+    :root {
+        --horizontal:6vw;
+        --vertical:10vh;
+    }
+}
+

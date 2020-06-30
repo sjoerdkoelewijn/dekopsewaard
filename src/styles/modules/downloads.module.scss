@@ -5,12 +5,12 @@
 .downloads {
     width:100%;
     min-height:50vh;
-    padding:$vertical 0 $vertical $horizontal;
+    padding:var(--vertical) 0 var(--vertical) var(--horizontal);
     background:$light-blue;
     overflow:hidden;
     position:relative;
 
-    a {
+    .download_link {
         color:$blue;
         text-decoration: none;
         font-size:1.4rem;
@@ -25,7 +25,13 @@
             
             path {
                 fill:$blue;
-                transition: fill 1s ease;
+                transition: fill 1s ease;              
+            }
+
+            @include small-phone  {
+                margin-right:10px;
+                width:15px;
+                height:15px;
             }
         }
 
@@ -40,6 +46,11 @@
                 }
             }
         }
+
+        @include small-phone  {
+            font-size:$small-p;
+            font-weight:400;
+        }
     }
 }
 
@@ -48,20 +59,33 @@
     margin-top:2vw;
     z-index:10;
     position: relative;
+
+    @include large-phone  {
+        display:block;
+    }
 }
 
 .planning {
-    margin-left:$horizontal;
+    margin-left:var(--horizontal);
+
+    @include large-phone  {
+        margin-left:0;
+        margin-top:var(--vertical);
+    }
 }
 
-h2 {
+.header {
     z-index:10;
     position: relative;
 }
 
-h3 {
+.subheader {
     font-size:1.3rem;
-    margin-bottom:30px;    
+    margin-bottom:30px; 
+    
+    @include small-phone  {
+        margin-top:20px; 
+    }
 }
 
 .wave {

@@ -16,11 +16,12 @@
         color:$white;
         //background:$white;
         border-radius:30px;
-        padding:15px 40px;
+        //padding:15px 40px;
         transition: background-color .5s ease, color .5s ease;
+        line-height:80px;
         position:absolute;
-        right:20px;
-        top:12px;
+        right:var(--horizontal);
+        top:3px;
         cursor: pointer;
         z-index:1001;
 
@@ -31,12 +32,7 @@
                 fill:$white;
                 transition: fill .5s ease;
             }
-        }
-
-        &:hover {
-            background:$darkblue;
-            transition: all .5s ease;
-        }
+        } 
         
     }
 
@@ -47,7 +43,7 @@
             color:$white;
             text-decoration: none;
             font-size: 1.3rem;
-            margin:20px $horizontal;
+            margin:20px var(--horizontal);
             display:block;
 
             &:hover {
@@ -56,13 +52,21 @@
                                  
         }  
 
+        .link[aria-current='page'] {
+            display:none;
+        }
+
+        .link[aria-current='page'] ~ .submenu {
+            display:none;
+        }
+
         .link_with_submenu {
             margin-left:0;
         }
 
         .submenu {
-            margin-left:$horizontal;
-        }
+            margin-left:var(--horizontal);
+        }        
  
         
     }

@@ -21,10 +21,6 @@
             width:50vw;
         }
 
-        @include small-laptop  {
-            margin-bottom:40vh;
-        }
-
         .image_desc_wrap {
             background:$blue;
             padding:3vw 5vw 5vw 3vw;
@@ -38,10 +34,19 @@
                 font-size: 1.8rem;
                 font-weight: 700;
                 margin-bottom:10px;
+
+                @include phone  {
+                    font-size:1.4rem;                    
+                }
             }
     
             p {
-                font-size:1.4rem;                
+                font-size:1.4rem;
+                
+                @include phone  {
+                    margin-top:0;
+                    font-size:1.2rem;
+                }                
             } 
 
             @include small-desktop  {
@@ -50,10 +55,17 @@
             }
             
             @include small-laptop  {
-                margin:100vh 0 0 0;
-                width:100%;
-                left:0;
-                bottom:-40vh;
+                padding:var(--horizontal-s) var(--horizontal-s) calc(var(--horizontal) * 1.5) var(--horizontal-s);
+                width:calc(100vw - var(--horizontal));
+                
+            }
+
+            @include phone  {
+                padding:var(--horizontal-s) var(--horizontal-s) calc(var(--horizontal) * 2.3) var(--horizontal-s);
+            }
+
+            @include smaller-phone  {
+                padding:var(--horizontal-s) var(--horizontal-s) calc(var(--horizontal) * 2.5) var(--horizontal-s);
             }
 
                         
@@ -66,6 +78,10 @@
         @include small-laptop  {
             width:100vw;
             height:80vh;
+        }
+
+        @include large-phone  {
+            height:50vh;
         }
     
     }
@@ -86,9 +102,9 @@
                 height:250vh;
             }
 
-           @include small-laptop  {
-            height:100vh;
-            }
+            @include small-laptop  {
+                height:100vh;
+            }            
 
         }
     
@@ -96,7 +112,7 @@
 
     .text_wrap {
         width:50vw;
-        padding:$vertical $horizontal $vertical $horizontal;
+        padding:var(--vertical) var(--horizontal) var(--vertical) var(--horizontal);
         box-sizing: border-box;
         display:block;
 
@@ -161,6 +177,26 @@
 
     }
 
+    // Moves image to the bottom of section on mobile.
+
+    .desktop_text {
+        display:block;
+
+        @include small-laptop  {
+            display:none;
+        }
+
+    }
+    
+    .mobile_text {
+        display:none;
+
+        @include small-laptop  {
+            display:block;
+        }
+            
+    }
+
 }
 
 .text_button {
@@ -190,6 +226,6 @@
 
     @include large-phone  {
         display:inline;
-        line-height:80px;
+        line-height:45px;
     }
 }

@@ -3,8 +3,8 @@
 @import "../typography";
 
 .latestPosts {
-    margin-left:$horizontal;
-    margin-bottom:$vertical;  
+    margin-left:var(--horizontal);
+    margin-bottom:var(--vertical);  
     
     @include small-laptop  {
         display:flex;
@@ -24,8 +24,8 @@
 
         @include large-phone {
             width:100vw;
-            margin-right:$horizontal;
-            margin-bottom:$vertical;
+            margin-right:var(--horizontal);
+            margin-bottom:var(--vertical);
         }
 
 
