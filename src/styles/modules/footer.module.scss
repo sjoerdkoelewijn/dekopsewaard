@@ -38,7 +38,7 @@
         }
 
         .logos {
-            margin-left:$horizontal;
+            margin-left:var(--horizontal);
     
             .footerlogo {
                 display:block;
@@ -74,17 +74,23 @@
 
             @include large-phone  {
                 width:84vw;
-                margin:$horizontal;
+                margin:var(--horizontal);
             }
     
             .text {
-                font-size:1.4rem;
-                font-weight:300;
                 color:$white;
 
                 p {
                     margin:0 0 20px 0;
+                    font-weight:300;
+
+                    @include small-phone {
+                        font-size:$small-p;
+                        font-weight:400;
+                    }
                 }
+
+                
             }
                 
         }
@@ -101,11 +107,16 @@
     line-height:90px;
     box-sizing: border-box;
     line-height:170%;
-    padding:30px $horizontal;
+    padding:30px var(--horizontal);
     
     p {
         font-size: $small-p;
         margin:0;
+        
+        @include small-phone {
+            font-size:$small-p;
+            font-weight:400;
+        }
     }
     
     a {

@@ -73,6 +73,8 @@ const HeroBlock = ({acf}) => {
                 }                
 
               </div>
+
+              <ArrowDownIcon />
             
             </BackgroundImage>  
 

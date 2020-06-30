@@ -83,10 +83,10 @@ class MultiplePopover extends React.Component {
                 <h2 className={Styles.header}>
                 {marker.header}
                 </h2>
-                <p className={Styles.description}>
-                  {marker.description}
-                </p>
-              
+                <div className={Styles.description} dangerouslySetInnerHTML={{
+                  __html: marker.description,
+                  }}
+                />
 
             </Popover>
 

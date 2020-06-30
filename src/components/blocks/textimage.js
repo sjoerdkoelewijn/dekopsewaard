@@ -72,8 +72,7 @@ const ParagraphBlock = ({acf}) => {
     
         }
 
-      </BackgroundImage>    
-  
+      </BackgroundImage>     
     
   )
 
@@ -96,7 +95,7 @@ const ParagraphBlock = ({acf}) => {
                 }}
               /> 
               
-              <p className={styles.text_content} dangerouslySetInnerHTML={{
+              <div className={styles.text_content} dangerouslySetInnerHTML={{
                 __html: acf.text_content,
                 }}
               />
@@ -146,6 +145,27 @@ const ParagraphBlock = ({acf}) => {
         return (
           <article id={anchor} className={styles.text_image_block}>
 
+            <div className={[styles.text_wrap, styles.mobile_text].join(' ')}>
+
+              {acf.nummer &&
+                <p className={styles.nummer}>
+                  0{acf.nummer}
+                </p>
+              }
+
+              <h2 className={styles.header} dangerouslySetInnerHTML={{
+                __html: acf.header,
+                }}
+              />            
+
+              <div className={styles.text_content} dangerouslySetInnerHTML={{
+                __html: acf.text_content,
+                }}
+              />
+
+            </div>
+
+
             {acf.image_slider.length > 1 ? // if 
             
               <Carousel 
@@ -166,17 +186,18 @@ const ParagraphBlock = ({acf}) => {
 
                 <>
 
-                  {acf.image_slider.map(slideitem => (
-                                    
-                    <Slideitem value={slideitem}/>  
+                {acf.image_slider.map(slideitem => (
                                   
-                  ))}
+                  <Slideitem value={slideitem}/>  
+                                
+                ))}
 
                 </>    
 
             }
 
-            <div className={styles.text_wrap}>
+
+            <div className={[styles.text_wrap, styles.desktop_text].join(' ')}>
 
               {acf.nummer &&
                 <p className={styles.nummer}>
@@ -189,7 +210,7 @@ const ParagraphBlock = ({acf}) => {
                 }}
               />            
 
-              <p className={styles.text_content} dangerouslySetInnerHTML={{
+              <div className={styles.text_content} dangerouslySetInnerHTML={{
                 __html: acf.text_content,
                 }}
               />

@@ -1,0 +1,23 @@
+@import "../colors";
+@import "../breakpoints";
+@import "../typography";
+
+.iframe_wrap {
+    margin:30px var(--horizontal) 30px var(--horizontal);
+    display:inline-block;
+
+    position: relative;
+    width: calc(100% - var(--horizontal));
+    padding-bottom: 52.5%; 
+    height: 0;
+
+    iframe, object, embed {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+

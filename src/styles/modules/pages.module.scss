@@ -12,6 +12,15 @@
 
     h1 {
         font-size:$small-title;
+
+        @include large-phone  {
+            font-size:$normal-subtitle;
+        }
+
+        @include phone  {
+            font-size:$small-subtitle;
+        }
+
     }
     
 }
@@ -28,38 +37,69 @@
 .content.with_sidebar {
     display:flex;
 
+    @include small-laptop  {
+        display:inline-block;
+    }
+
     .content_block {
         width:65%;
         padding-right:6vw;
+
+        @include small-laptop  {
+            width:80vw;
+        }
+
+        @include large-phone  {
+            width:100%;
+        }
     }
 
     .sidebar {
         width:35%;
         background:$blue;
         padding:3vw 4vw 6vw 4vw;
-        margin:5vw $horizontal 0 0;
+        margin:5vw var(--horizontal) 0 0;
         color:$white;
         z-index:10;
-        max-height:600px;
+        margin-bottom: var(--vertical);
+        //max-height:600px;
 
         strong {
             font-size:120%;
+        }
+
+        @include small-laptop  {
+            width:calc(100vw - (var(--horizontal) * 2));
+            margin:var(--vertical) var(--horizontal);
+            padding:var(--vertical) var(--horizontal);
+        }
+
+        @include large-phone  {
+            width:calc(100vw - (var(--horizontal) * 2));
         }
     }
 
 }
 
 .heading {
-    margin:4vw 1vw 0 $horizontal;
+    margin:4vw 1vw 0 var(--horizontal);
     display:block;
     max-width:50vw;
+
+    @include large-phone  {
+        max-width:100%;
+    }
 }
 
 .date_wrap {
     margin-bottom:30px;
     font-weight:600;
-    margin:30px 0 30px $horizontal;
+    margin:30px var(--horizontal) 30px var(--horizontal);
     display:inline-block;
+
+    @include large-phone  {
+        margin:10px var(--horizontal) 20px var(--horizontal);
+    }
     
     .date {
         margin-left:4px;
@@ -69,8 +109,12 @@
 .breadcrumbtrail {
     margin-top:30px;
     font-size:1rem;
-    margin-left:$horizontal;
+    margin-left:var(--horizontal);
     width:50vw;
+
+    @include large-phone  {
+        width:90vw;
+    }
 
     .link {
         display:inline;
@@ -101,14 +145,40 @@
 // ---------- Core Blocks --------------------------
 
 .CoreHeadingBlock {
-    margin:$horizontal 0 0 $horizontal;
+    margin:var(--vertical) var(--horizontal) 0 var(--horizontal);
     display:block;
+
+    h2 {
+        @include phone  {
+            font-size:2rem;
+        }
+    }
 }
 
 .CoreParagraphBlock {
-    margin:30px 0 0 $horizontal;
+    margin:var(--vertical-s) var(--horizontal) 0 var(--horizontal);
     max-width:50vw;
     display:block;
+
+    @include small-laptop  {
+        max-width:80vw;
+    }
+
+    @include large-phone  {
+        max-width:100%;
+    }
+
+    p {
+       
+        @include small-laptop  {
+            max-width:80vw;
+        }
+
+        @include large-phone  {
+            max-width:100%;
+        }
+    }
+
 }
 
 .CoreParagraphBlock:last-of-type {
@@ -116,16 +186,11 @@
 }
 
 .CoreImageBlock {
-    margin:30px 0 30px $horizontal;
+    margin:30px var(--horizontal) 30px var(--horizontal);
     display:inline-block;
 }
 
 .CoreQuoteBlock {
-    margin:30px 0 30px $horizontal;
-    display:inline-block;
-}
-
-.CoreEmbedYoutubeBlock {
-    margin:30px 0 30px $horizontal;
+    margin:30px var(--horizontal) 30px var(--horizontal);
     display:inline-block;
 }

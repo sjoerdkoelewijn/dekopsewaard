@@ -10,7 +10,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    `gatsby-transformer-remark`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
     `google-map-react`,

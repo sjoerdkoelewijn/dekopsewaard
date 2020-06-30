@@ -26,7 +26,7 @@ const nieuwsbriefBlock = ({acf}) => {
           }}
         />            
 
-        <p className={styles.text_content} dangerouslySetInnerHTML={{
+        <div className={styles.text_content} dangerouslySetInnerHTML={{
           __html: acf.description,
           }}
         />

@@ -8,20 +8,32 @@
     display:flex;
     align-items: center;
 
+    @include small-laptop  {
+        display:block;
+    }
+
     .text_wrap {
         width:50%;
-        padding:$horizontal 2vw $horizontal 8vw; 
+        padding:var(--vertical) 2vw var(--horizontal) 8vw; 
         box-sizing: border-box;
         color:$white;
 
         .header {
-            font-size:2.4vw;
+            font-size:2.5rem;
             font-weight:900;
             margin-bottom:30px;
+
+            @include phone  {
+                font-size:2rem;
+            }
         }
 
         p {
             margin-bottom:20px;
+        }
+
+        @include small-laptop  {
+            width:90%;
         }
     }
 
@@ -31,20 +43,17 @@
 .nieuwsbrief_form {
     width:45%;
     margin:5%;
-    padding:1vw 2vw 1vw $horizontal;
+    padding:var(--horizontal);
     box-sizing: border-box;
     z-index:1;
     color:$white;
     border-left:1px solid #0E4682;
 
-    @include large-laptop  {
-        margin-left:$horizontal;
-        padding:9vw 0 10vw 0;
-        width:80%;
-    }
-
-    @include large-phone  {
-        padding:0 0 100px 0;
+    @include small-laptop  {
+        width:100%;
+        margin:0 0 100px 0;
+        border:0;
+        display:inline-block;
     }
 
 }
@@ -106,7 +115,7 @@ input {
     }
 
     @include phone  {
-        width:90%;
+        width:100%;
     }
 
     &:focus {
@@ -130,36 +139,33 @@ input {
         background:$white;
         color:$blue;
     }
+
+    @include phone  {
+        width:100%;
+    }
 }
 
 .privacy_text {
     width:80%;
-    font-size:$small-p;
+    font-size:1rem;
+    margin:30px 0 0 0;
 
     @include large-laptop  {
         width:70%;
     }
 
-    p {
-        font-size:1rem;
-        margin:30px 0 0 $horizontal;
+    @include small-laptop  {
+        margin-left:0;
+        width:50%;
+    }
 
-        @include large-laptop  {
-            margin-left:6vw;
-        }
+    @include large-phone  {
+        width:70%;
+    }
 
-        @include small-laptop  {
-            margin-left:0;
-            width:50%;
-        }
-
-        @include large-phone  {
-            width:70%;
-        }
-
-        @include large-phone  {
-            width:90%;
-        }
+    @include phone  {
+        width:100%;
+        font-size:.9rem;
     }
 
     .privacy_link{

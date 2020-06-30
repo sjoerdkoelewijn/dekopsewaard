@@ -3,10 +3,16 @@
 @import "../typography";
 
 .form_block {
-    margin-top:6vh;
-    margin-left:$horizontal;
-    margin-bottom:8vw;
+    margin:var(--vertical-s) var(--horizontal) var(--vertical) var(--horizontal);
     max-width:50vw;
+    
+    @include large-laptop  {
+        max-width:60vw;
+    }
+
+    @include small-laptop  {
+        max-width:80vw;
+    }
 
     label {
         margin:30px 0 0 4px;
@@ -17,6 +23,11 @@
         display:block;
         margin:10px 0 30px 0;
         width:90%;
+
+        @include large-phone  {
+            width:100%;
+        }
+
     }
 
     .ratingLabel {
@@ -27,6 +38,10 @@
 
     .rating_wrap {
         display:flex;
+        
+        @include large-phone  {
+            display:block;                
+        } 
 
         .rating {
             margin-top:10px;
@@ -44,6 +59,11 @@
             font-weight:400;
             font-style: italic;
             margin:50px 0 0 25px;
+
+            @include large-phone  {
+                margin:0 0 25px 0;
+                display: inline-block;              
+            } 
     
         }
     }
@@ -54,6 +74,11 @@
         margin-top:30px;
         display:flex;
         width:90%;
+
+        @include large-phone  {
+            display:block;
+            width:100%;                
+        }
 
         span {
             width:49%;
@@ -69,6 +94,10 @@
 
         .achternaam {
             margin-left:2%;
+
+            @include large-phone  {
+                margin-left:0;                
+            }
         }
 
     }

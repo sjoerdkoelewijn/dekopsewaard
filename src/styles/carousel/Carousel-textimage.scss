@@ -1,9 +1,15 @@
 @import "../colors";
+@import "../breakpoints";
 
 
 .BrainhubCarousel__container {
   width: 50.21vw;
   overflow: hidden;
+
+  @include small-laptop  {
+    width:100vw;
+  }
+
 }
 
 .BrainhubCarousel {
@@ -48,6 +54,22 @@
 
   margin:-130px 0 0 120px;
 
+  @include small-desktop  {
+    margin:-120px 0 0 100px;
+  }
+
+  @include small-laptop  {
+    margin:-90px 0 0 55px;
+  }
+
+  @include phone  {
+    margin:-60px 0 0 calc(var(--horizontal) * 1.4);
+  }
+
+  @include smaller-phone {
+    margin-top:-55px;
+
+  }
     .BrainhubCarousel__dot  {
       margin-right:5px;
       width:30px;
@@ -59,6 +81,12 @@
       font-weight: 400;
       font-size:1.1rem;
       cursor: pointer;
+
+      @include phone  {
+        width:25px;
+        height:25px;
+        font-size:.9rem;
+      }
     }
 
     .BrainhubCarousel__dot--selected {

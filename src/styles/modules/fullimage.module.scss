@@ -2,38 +2,65 @@
 @import "../breakpoints";
 @import "../typography";
 
-.fullwidthimage {
-    background:$light-blue;
-    //width:100vw;
-    height:100vh;
-    display:block;
+.fullwidthimage_wrap {
     position:relative;
-    z-index: 1;
-    box-sizing: border-box;
-    margin-top:-200px;  
 
-    @include large-laptop  {
-        height:calc(100vh - 80px);
+    .fullwidthimage {
+        background:$light-blue;
+        //width:100vw;
+        height:100vh;
+        display:block;
+        position:relative;
+        z-index: 1;
+        box-sizing: border-box;
+        margin-top:-2px;
+        //margin-top:-200px;  
+
+        @include large-laptop  {
+            height:calc(100vh - 80px);
+        }
+
+        @include small-height  {
+            height:calc(250vh - 80px);
+        } 
+        
+        @include large-phone  {
+            height:50vh;
+        }
+        
+    } 
+
+    .description {
+        background:$blue;
+        color:$white;
+        font-weight:200;
+        font-size:2.5rem;
+
+        position:absolute;
+        z-index:10;
+        right:20vw;
+        bottom:-100px;
+
+        padding:4vw;
+        width:35vw;
+
+        @include large-laptop  {
+            font-size:2.2rem;
+            width:40vw;
+        }
+
+        @include small-laptop  {
+            font-size:2rem;
+            width:55vw;
+            margin:-28% 0 0 0;
+            right:var(--horizontal);
+            padding:6vw;
+        }
+
+        @include large-phone  {
+            display:none;
+        }
+
     }
-
-    @include small-height  {
-        height:calc(250vh - 80px);
-    }   
-    
-} 
-
-.description {
-    background:$blue;
-    color:$white;
-    font-weight:200;
-    font-size:2.5rem;
-
-    position:absolute;
-    z-index:10;
-    margin-left:40%;
-    margin-top:-15%;
-
-    padding:4vw;
-    width:30vw;
 
 }
