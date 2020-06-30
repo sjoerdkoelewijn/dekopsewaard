@@ -95,7 +95,7 @@ const ParagraphBlock = ({acf}) => {
                 }}
               /> 
               
-              <p className={styles.text_content} dangerouslySetInnerHTML={{
+              <div className={styles.text_content} dangerouslySetInnerHTML={{
                 __html: acf.text_content,
                 }}
               />
