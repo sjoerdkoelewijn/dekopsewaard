@@ -42,7 +42,7 @@ const InspraakForm = () => {
   
         <div className={styles.form_block}>
 
-            <Mutation mutation={CONTACT_MUTATION}>
+        <Mutation mutation={CONTACT_MUTATION}>
             
             {(createInspraakSubmission, { loading, error, data }) => (
 
