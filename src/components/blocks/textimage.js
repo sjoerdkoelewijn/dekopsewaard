@@ -22,7 +22,7 @@ export const fragment = graphql`
           sourceUrl
           imageFile {
             childImageSharp {
-              fluid(quality: 100, maxWidth: 1920) {
+              fluid(quality: 80, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }
@@ -114,6 +114,8 @@ const ParagraphBlock = ({acf}) => {
             infinite
             dots
             //arrows
+            autoPlay={6000}
+            animationSpeed={1500}
             className={styles.carousel}>
               
               {acf.image_slider.map(slideitem => (
@@ -172,6 +174,8 @@ const ParagraphBlock = ({acf}) => {
               infinite
               dots
               //arrows
+              autoPlay={6000}
+              animationSpeed={1500}
               className={styles.carousel}>
                 
                 {acf.image_slider.map(slideitem => (
