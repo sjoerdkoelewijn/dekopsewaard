@@ -241,7 +241,7 @@ const Page = ({data}) => {
                   
                     <aside className={styles.sidebar}>
 
-                      <p className="sidebar_text" dangerouslySetInnerHTML={{
+                      <div className={styles.sidebar_text} dangerouslySetInnerHTML={{
                         __html: data.wordPress.pageBy.page_type.text,
                         }}
                       />
