@@ -27,7 +27,7 @@ export const fragment = graphql`
 const DownloadsBlock = ({acf}) => {
         
   return (
-    <article className={styles.downloads}>
+    <article id="downloads" className={styles.downloads}>
 
       <h2 className={styles.header}>Downloads</h2>
 
