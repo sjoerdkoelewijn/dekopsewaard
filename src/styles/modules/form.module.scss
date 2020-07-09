@@ -2,6 +2,55 @@
 @import "../breakpoints";
 @import "../typography";
 
+.form_wrap {
+    display:flex;
+  
+    @include medium-laptop  {
+        display:inline-block;
+    }
+
+    .form_inner {
+        width:65vw;
+
+        @include medium-laptop  {
+            width:80vw;
+        }
+
+        @include large-phone  {
+            width:100vw;
+        }
+    }
+
+    .form_sidebar {
+        width:35vw;
+        background:$blue;
+        color:$white;
+        margin-right:var(--horizontal);
+        padding:80px;
+
+        strong {
+            font-size:$small-subtitle;
+        }
+
+        @include medium-laptop  {
+            width:80vw;
+            margin-left:var(--horizontal);
+            margin-bottom:var(--vertical);
+            padding:var(--horizontal);
+        }
+
+        @include large-phone  {
+            width:85vw;
+            margin-right:var(--horizontal);
+
+            p {
+                font-size:$small-p;
+            }
+        }
+    }
+
+}
+
 .form_block {
     margin:var(--vertical-s) var(--horizontal) var(--vertical) var(--horizontal);
     max-width:50vw;
