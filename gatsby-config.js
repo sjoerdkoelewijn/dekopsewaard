@@ -28,8 +28,6 @@ module.exports = {
         typeName: `WPGraphQL`,
         fieldName: `wordPress`,
         url: `https://api.dekopsewaard.nl/graphql`,
-        //url: `http://api.dekopsewaard.local/graphql`,
-        refetchInterval: 30,
         batch: true,
       },
     },
