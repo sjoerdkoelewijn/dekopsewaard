@@ -49,7 +49,7 @@ const DownloadsBlock = ({acf}) => {
 
         <div className={styles.planning}>
 
-          <h3 className={styles.subheader}>Planning</h3>
+          <h3 className={styles.subheader}>Bestemmingsplan</h3>
 
             {acf.planning.map(download => {
               
