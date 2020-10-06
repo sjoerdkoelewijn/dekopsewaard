@@ -49,6 +49,13 @@ const HeroBlock = ({acf}) => {
               backgroundColor={`#D9E5F1`}
             >
               
+              <div className={styles.banner}>
+                <span className={styles.inschrijven}>Inschrijven</span>
+                <span className={styles.vanaf}>vanaf</span>
+                <span className={styles.maand}>februari</span>
+                <span className={styles.jaar}>2021</span>
+              </div>
+
               <div className={styles.textwrap}>
 
                 <h2 className={styles.subheader} dangerouslySetInnerHTML={{
