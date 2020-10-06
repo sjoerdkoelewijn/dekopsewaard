@@ -34,6 +34,58 @@
             height:calc(250vh - 80px);
         }
     }    
+
+    .banner {
+        display:flex;
+        
+        @include small-laptop {
+            display:none;
+        }
+
+        color:$white;
+        background:$orange;
+        position:absolute;
+        top:20vh;
+        right:20vw;
+        
+        width:15vw;
+        height:15vw;
+        min-width:200px;
+        min-height:200px;
+        max-width:250px;
+        max-height:250px;
+        border-radius: 50%;
+        text-align: center;
+
+        transform:rotate(4deg);
+        
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center; 
+
+        .inschrijven {
+            margin: 8px 0 0 0;
+            font-size:calc(1.3rem + .2vw);
+        }
+        .vanaf {
+            margin: 2px 0 0 0;
+            line-height:100%;
+            font-size:calc(1.3rem + .2vw);
+            
+        }
+        .maand {
+            margin: 3px 0 0 0;
+            line-height:100%;
+            font-size:calc(2rem + .2vw);
+            font-weight:600;
+        }
+        .jaar {
+            margin: 0;
+            line-height:100%;
+            font-size:calc(2rem + .2vw);
+            font-weight:600;
+        }
+    }
    
     .textwrap {
         margin:10vh 0 0 var(--horizontal);
