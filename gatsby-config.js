@@ -8,6 +8,7 @@ module.exports = {
     siteUrl: `https://dekopsewaard.nl`,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
