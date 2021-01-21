@@ -83,11 +83,7 @@ const Page = ({data}) => {
         case 'WPGraphQL_CoreParagraphBlock':
           return <span className={styles.CoreParagraphBlock}><ParagraphBlock key={block.id} {...block} /></span>;
 
-<<<<<<< HEAD
         case 'WPGraphQL_AcfLatestpostBlock':
-=======
-         case 'WPGraphQL_AcfLatestpostBlock':
->>>>>>> a3f38fdcc03ef6ec8184865ef396610319b87767
           return <span className={styles.AcfLatestpostBlock}><LatestpostBlock key={block.id} {...block} /></span>;  
           
         case 'WPGraphQL_AcfHeroBlock':
