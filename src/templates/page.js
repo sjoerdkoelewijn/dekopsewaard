@@ -9,7 +9,6 @@ import HeroBlock from "../components/blocks/hero";
 import TextimageBlock from "../components/blocks/textimage";
 import FullimageBlock from "../components/blocks/fullimage";
 import NieuwsbriefBlock from "../components/blocks/nieuwsbrief";
-import FormBlock from "../components/blocks/form";
 import LatestpostBlock from "../components/blocks/latestposts";
 import BlocksliderBlock from '../components/blocks/blockslider';
 import NewsletterForm from '../components/newsletterForm';
@@ -55,7 +54,6 @@ export const query = graphql`
           ...AcfKaartBlock
           ...AcfFullimageBlock
           ...AcfNieuwsbriefBlock
-          ...AcfFormBlock
           ...AcfLatestpostBlock
           ...AcfBlocksliderBlock
           ...CoreImageBlock
@@ -85,10 +83,7 @@ const Page = ({data}) => {
         case 'WPGraphQL_CoreParagraphBlock':
           return <span className={styles.CoreParagraphBlock}><ParagraphBlock key={block.id} {...block} /></span>;
 
-        case 'WPGraphQL_AcfFormBlock':
-          return <span className={styles.AcfFormBlock}><FormBlock key={block.id} {...block} /></span>;
-
-        case 'WPGraphQL_AcfLatestpostBlock':
+         case 'WPGraphQL_AcfLatestpostBlock':
           return <span className={styles.AcfLatestpostBlock}><LatestpostBlock key={block.id} {...block} /></span>;  
           
         case 'WPGraphQL_AcfHeroBlock':
@@ -241,7 +236,7 @@ const Page = ({data}) => {
                   
                     <aside className={styles.sidebar}>
 
-                      <div className={styles.sidebar_text} dangerouslySetInnerHTML={{
+                      <div className="sidebar_text" dangerouslySetInnerHTML={{
                         __html: data.wordPress.pageBy.page_type.text,
                         }}
                       />
