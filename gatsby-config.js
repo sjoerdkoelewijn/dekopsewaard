@@ -8,13 +8,14 @@ module.exports = {
     siteUrl: `https://dekopsewaard.nl`,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
     `google-map-react`,
     `gatsby-plugin-anchor-links`,
-    `gatsby-plugin-material-ui`,
+    //`gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,7 +30,7 @@ module.exports = {
         fieldName: `wordPress`,
         url: `https://api.dekopsewaard.nl/graphql`,
         //url: `http://api.dekopsewaard.local/graphql`,
-        refetchInterval: 30,
+        //refetchInterval: 30,
         batch: true,
       },
     },

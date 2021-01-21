@@ -64,14 +64,10 @@
         margin-bottom: var(--vertical);
         //max-height:600px;
 
-        .sidebar_text {
-
-            strong {
-                font-size:120%;
-            }
-            
+        strong {
+            font-size:120%;
         }
-        
+
         @include small-laptop  {
             width:calc(100vw - (var(--horizontal) * 2));
             margin:var(--vertical) var(--horizontal);
