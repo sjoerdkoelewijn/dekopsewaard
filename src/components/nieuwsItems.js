@@ -19,7 +19,7 @@ const NieuwsItems = () => {
                                 sourceUrl
                                 imageFile {
                                     childImageSharp {
-                                        fluid(quality: 100, maxWidth: 960) {
+                                        fluid(quality: 80, maxWidth: 960) {
                                             ...GatsbyImageSharpFluid_withWebp
                                         }
                                     }
