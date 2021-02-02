@@ -13,7 +13,7 @@ import LatestpostBlock from "../components/blocks/latestposts";
 import BlocksliderBlock from '../components/blocks/blockslider';
 import NewsletterForm from '../components/newsletterForm';
 import ImageBlock from "../components/blocks/imageBlock";
-import EmbedYoutubeBlock from "../components/blocks/embedYoutube";
+import EmbedBlock from "../components/blocks/embed";
 import QuoteBlock from "../components/blocks/quoteBlock";
 import ButtonBlock from "../components/blocks/button";
 import DownloadsBlock from "../components/blocks/downloads";
@@ -36,11 +36,13 @@ export const query = graphql`
           text
         }
         featuredImage {
-          sourceUrl
-          imageFile {
-            childImageSharp {
-              fluid(quality: 80, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
+          node {
+            sourceUrl
+            imageFile {
+              childImageSharp {
+                fluid(quality: 80, maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
               }
             }
           }
@@ -58,7 +60,7 @@ export const query = graphql`
           ...AcfBlocksliderBlock
           ...CoreImageBlock
           ...CoreQuoteBlock
-          ...CoreEmbedYoutubeBlock
+          ...CoreEmbedBlock
           ...AcfButtonBlock
           ...AcfDownloadsBlock
         }
@@ -110,8 +112,8 @@ const Page = ({data}) => {
           case 'WPGraphQL_CoreQuoteBlock':
             return <span className={styles.CoreQuoteBlock}><QuoteBlock key={block.id} {...block} /></span>;
           
-          case 'WPGraphQL_CoreEmbedYoutubeBlock' :
-            return <span className={styles.CoreEmbedYoutubeBlock}><EmbedYoutubeBlock key={block.id} {...block} /></span>; 
+          case 'WPGraphQL_CoreEmbedBlock' :
+            return <span className={styles.CoreEmbedBlock}><EmbedBlock key={block.id} {...block} /></span>; 
             
           case 'WPGraphQL_AcfButtonBlock':
             return <span className={styles.AcfButtonBlock}><ButtonBlock key={block.id} {...block} /></span>;
@@ -143,7 +145,7 @@ const Page = ({data}) => {
                 <BackgroundImage 
                   Tag="article"
                   className={styles.header_image}
-                  fluid={data.wordPress.pageBy.featuredImage.imageFile.childImageSharp.fluid}
+                  fluid={data.wordPress.pageBy.featuredImage.node.imageFile.childImageSharp.fluid}
                   backgroundColor={`#D9E5F1`}
                 />    
 
@@ -175,7 +177,7 @@ const Page = ({data}) => {
                     <BackgroundImage 
                       Tag="article"
                       className={styles.header_image}
-                      fluid={data.wordPress.pageBy.featuredImage.imageFile.childImageSharp.fluid}
+                      fluid={data.wordPress.pageBy.featuredImage.node.imageFile.childImageSharp.fluid}
                       backgroundColor={`#D9E5F1`}
                     />
 
@@ -218,7 +220,7 @@ const Page = ({data}) => {
               <BackgroundImage 
                 Tag="article"
                 className={styles.header_image}
-                fluid={data.wordPress.pageBy.featuredImage.imageFile.childImageSharp.fluid}
+                fluid={data.wordPress.pageBy.featuredImage.node.imageFile.childImageSharp.fluid}
                 backgroundColor={`#D9E5F1`}
               />
 

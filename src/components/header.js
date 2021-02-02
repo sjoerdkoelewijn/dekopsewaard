@@ -12,7 +12,7 @@ const Header = () => {
   const data = useStaticQuery(graphql`
   query getMenu {
     wordPress {
-      menuItems(where: {location: MAIN_NAVIGATION}) {
+      menuItems(where: {location: MAIN_NAVIGATION, parentDatabaseId: 0}) {
         edges {
           node {
             url
@@ -40,6 +40,7 @@ const Header = () => {
   const handleOverlayMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
 
   return(
 

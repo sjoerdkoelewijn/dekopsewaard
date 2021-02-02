@@ -15,11 +15,13 @@ const NieuwsItems = () => {
                         title
                         date
                         featuredImage {
-                            sourceUrl
-                            imageFile {
-                                childImageSharp {
-                                    fluid(quality: 100, maxWidth: 960) {
-                                        ...GatsbyImageSharpFluid_withWebp
+                            node {
+                                sourceUrl
+                                imageFile {
+                                    childImageSharp {
+                                        fluid(quality: 100, maxWidth: 960) {
+                                            ...GatsbyImageSharpFluid_withWebp
+                                        }
                                     }
                                 }
                             }
@@ -52,7 +54,7 @@ const NieuwsItems = () => {
 
                                 <BackgroundImage 
                                 className={styles.image}
-                                fluid={item.node.featuredImage.imageFile.childImageSharp.fluid}
+                                fluid={item.node.featuredImage.node.imageFile.childImageSharp.fluid}
                                 backgroundColor={`#D9E5F1`}
                                 />   
 

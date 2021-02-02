@@ -13,7 +13,7 @@ import NieuwsbriefBlock from "../components/blocks/nieuwsbrief";
 import LatestpostBlock from "../components/blocks/latestposts";
 import ButtonBlock from "../components/blocks/button";
 import ImageBlock from "../components/blocks/imageBlock";
-import EmbedYoutubeBlock from "../components/blocks/embedYoutube";
+import EmbedBlock from "../components/blocks/embed";
 import QuoteBlock from "../components/blocks/quoteBlock";
 import SEO from "../components/seo";
 import ChevronIcon from "../components/chevronIcon";
@@ -32,11 +32,13 @@ export const query = graphql`
           metaDesc
         }
         featuredImage {
-          sourceUrl
-          imageFile {
-            childImageSharp {
-              fluid(quality: 100, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
+          node {
+            sourceUrl
+            imageFile {
+              childImageSharp {
+                fluid(quality: 100, maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
               }
             }
           }
@@ -47,7 +49,7 @@ export const query = graphql`
           ...CoreParagraphBlock
           ...CoreImageBlock
           ...CoreQuoteBlock
-          ...CoreEmbedYoutubeBlock
+          ...CoreEmbedBlock
           ...AcfHeroBlock
           ...AcfTextimageBlock
           ...AcfKaartBlock
@@ -79,7 +81,7 @@ const Nieuws = ({ data }) => {
         <BackgroundImage 
           Tag="article"
           className={styles.header_image}
-          fluid={data.wordPress.nieuwsBy.featuredImage.imageFile.childImageSharp.fluid}
+          fluid={data.wordPress.nieuwsBy.featuredImage.node.imageFile.childImageSharp.fluid}
           backgroundColor={`#D9E5F1`}
         />    
 
@@ -143,8 +145,8 @@ const Nieuws = ({ data }) => {
                     case 'WPGraphQL_CoreQuoteBlock':
                       return <span className={styles.CoreQuoteBlock}><QuoteBlock key={block.id} {...block} /></span>;
                     
-                    case 'WPGraphQL_CoreEmbedYoutubeBlock' :
-                      return <span className={styles.CoreEmbedYoutubeBlock}><EmbedYoutubeBlock key={block.id} {...block} /></span>;
+                    case 'WPGraphQL_CoreEmbedBlock' :
+                      return <span className={styles.CoreEmbedBlock}><EmbedBlock key={block.id} {...block} /></span>;
           
                     case 'WPGraphQL_AcfHeroBlock':
                       return <span className={styles.AcfHeroBlock}><HeroBlock key={block.id} {...block} /></span>;

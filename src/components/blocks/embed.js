@@ -3,17 +3,18 @@ import { graphql } from 'gatsby';
 import styles from '../../styles/modules/embed.module.scss';
 
 export const fragment = graphql`
-  fragment CoreEmbedYoutubeBlock on WPGraphQL_CoreEmbedYoutubeBlock {
+  fragment CoreEmbedBlock on WPGraphQL_CoreEmbedBlock {
     attributes {
-      ... on WPGraphQL_CoreEmbedYoutubeBlockAttributes {
-        url       
+      ... on WPGraphQL_CoreEmbedBlockAttributes {
+        url
+        caption       
       }             
     }    
   }
 `;
 
 
-const EmbedYoutubeBlock = ({attributes}) => {
+const EmbedBlock = ({attributes}) => {
 
  
     return (
@@ -35,4 +36,4 @@ const EmbedYoutubeBlock = ({attributes}) => {
               
 )};
 
-export default EmbedYoutubeBlock;
+export default EmbedBlock;
