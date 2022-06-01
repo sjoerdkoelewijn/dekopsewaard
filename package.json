@@ -43,7 +43,7 @@
     "react-mailchimp-subscribe": "^2.1.0",
     "react-responsive-carousel": "^3.2.7",
     "react-zoom-pan-pinch": "^1.6.1",
-    "sharp": "^0.25.3"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "prettier": "^1.19.1"
