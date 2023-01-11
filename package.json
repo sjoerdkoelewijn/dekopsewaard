@@ -28,7 +28,7 @@
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-source-graphql": "^2.1.28",
     "gatsby-source-twitter": "^3.0.0",
-    "gatsby-transformer-remark": "^2.6.37",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.3.3",
     "google-map-react": "^1.1.6",
     "graphql-tag": "^2.10.3",
